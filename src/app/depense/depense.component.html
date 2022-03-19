@@ -1,1 +1,27 @@
-<p>depense works!</p>
+<div class="container">
+  <table>
+    <thead>
+      <th
+        *ngFor="let header of headers"
+        class="column-{{ header.toLowerCase() }}"
+      >
+        {{ header }}
+      </th>
+    </thead>
+    <tr *ngFor="let depense of depenses">
+      <td class="column-heure">{{ depense.heure }}</td>
+      <td class="column-type">{{ depense.type }}</td>
+      <td class="column-motif">{{ depense.motif }}</td>
+      <td class="column-montant">
+        {{ depense.montant | currency: " ":"symbol":"1.0" }} Ar
+      </td>
+    </tr>
+    <tfoot>
+      <td class="column-heure">{{ footers[0] }}</td>
+      <td class="column-type-motif" colspan="2">{{ footers[1] }}</td>
+      <td class="column-montant">
+        {{ footers[2] | currency: " ":"symbol":"1.0" }} Ar
+      </td>
+    </tfoot>
+  </table>
+</div>
