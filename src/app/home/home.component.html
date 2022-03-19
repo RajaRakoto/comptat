@@ -1,1 +1,81 @@
-<h1>Hello world!</h1>
+<div class="container">
+  <nav class="menu">
+    <h3
+      class="menu-item"
+      [routerLink]="['/revenu']"
+      routerLinkActive="selected-menu-item"
+    >
+      Revenu
+    </h3>
+    <h3
+      class="menu-item"
+      [routerLink]="['/depense']"
+      routerLinkActive="selected-menu-item"
+    >
+      Dépense
+    </h3>
+    <h3
+      class="menu-item"
+      [routerLink]="['/credit']"
+      routerLinkActive="selected-menu-item"
+    >
+      Crédit
+    </h3>
+    <h3
+      class="menu-item"
+      [routerLink]="['/depenser']"
+      routerLinkActive="selected-menu-item"
+    >
+      Dépenser
+    </h3>
+    <h3
+      class="menu-item"
+      [routerLink]="['/revenu-archive']"
+      routerLinkActive="selected-menu-item"
+    >
+      Revenu archivé
+    </h3>
+    <h3
+      class="menu-item"
+      [routerLink]="['/depense-archive']"
+      routerLinkActive="selected-menu-item"
+    >
+      Dépense archivé
+    </h3>
+    <h3
+      class="menu-item"
+      [routerLink]="['/depense-mensuelle']"
+      routerLinkActive="selected-menu-item"
+    >
+      Dépense mensuelle
+    </h3>
+    <h3
+      class="menu-item"
+      [routerLink]="['/analyse']"
+      routerLinkActive="selected-menu-item"
+    >
+      Analyse
+    </h3>
+  </nav>
+
+  <div class="main">
+    <mat-toolbar>
+      <div class="caisse">Caisse: <span>379.500 Ar</span></div>
+      <div class="date">Mardi 17 Mars 2022</div>
+      <div class="user">
+        <mat-icon class="mat-18">person</mat-icon>
+        Admin
+      </div>
+    </mat-toolbar>
+
+    <section>
+      <router-outlet></router-outlet>
+    </section>
+  </div>
+</div>
+
+<!-- 
+Caisse: 379.500 Ar
+Mardi 17 Mars 2022
+Admin
+ -->

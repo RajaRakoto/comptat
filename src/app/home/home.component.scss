@@ -1,0 +1,68 @@
+
+mat-toolbar {
+    background-color: #2d2d2d;
+}
+
+.container {
+    border: 2px solid red;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+
+    .menu {
+        padding: 0 2rem;
+        display: flex;
+        flex-direction: column;
+        border: 2px green solid;
+        height: 100%;
+        
+        .menu-item {
+            margin-top: 1.3rem;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .selected-menu-item {
+            color: dodgerblue;
+        }
+    }
+
+    .main {
+        flex: 1;
+        height: 100%;
+        border: yellow;
+        display: flex;
+        flex-direction: column;
+    }
+
+    mat-toolbar {
+        border: 2px solid purple;
+        display: flex;
+        justify-content: space-around;
+
+        .caisse {
+            span {
+                color: goldenrod;
+            }
+        }
+
+        .user {
+            display: flex;
+            align-items: center;
+
+            mat-icon {
+                transform: scale(1.5);
+                margin-right: 0.8rem;
+            }
+        }
+    }
+
+    section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: larger;
+        height: 100%;
+        border: 2px solid dodgerblue;
+    }
+}
