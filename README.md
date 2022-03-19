@@ -3,7 +3,6 @@
 Ity projet ity dia mahasolo comptable eny anivony orinasa kely iray...
 Afaka hijerena "Bilan journalier/Mensuel/annuel sns"
 
-
 # Répartion des tâches:
 
 ## Introduction
@@ -15,8 +14,8 @@ Mbola eo ampanaovana concéption lery tonga d'ef manao mandray nôty ny `objet |
 Mbola eo ampanaovana concéption i [Brillant](#) d'ef maka inspiraka hanaovana an'ilay `diapo` sy anaingona an'ilay interface i [Raja](#)...
 
 Rehefa avy nanoratra anatin' `duty` n'tsirairay i [Stany](#) dia efa samy afaka manomboka miasa avokoa ny rehetra...
-    *[Rivo](#) miketrika `data-set` hanaovana simulation;
-    *[Juko](#) sy [Raja](#) miketrika `fonctions | objet`.
+_[Rivo](#) miketrika `data-set` hanaovana simulation;
+_[Juko](#) sy [Raja](#) miketrika `fonctions | objet`.
 
 Rehefa vitan'i [Brillant](#) ilay concéption dia efa manomboka ny réalisation n'ilay projet lery sady mampiasa an'ze `data-set | fonctions | objet` disponibles. Milaza @ ra [Stany](#) lery raha toa ka misy `zavatra supplémentaires` ilain'lery.
 
