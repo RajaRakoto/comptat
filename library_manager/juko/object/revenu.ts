@@ -1,5 +1,6 @@
 export class Revenu {
-    constructor(public id_revenu: number,
+    constructor(
+        public id_revenu: number,
         public date: string,
         public libelle: string,
         public source: number,
