@@ -58,11 +58,8 @@ mat-toolbar {
     }
 
     section {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: larger;
         height: 100%;
+        width: 100%;
         border: 2px solid dodgerblue;
     }
 }

@@ -54,13 +54,3 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
-
-/* 
-    <h3 class="menu-item">Dépense</h3>
-    <h3 class="menu-item">Crédit</h3>
-    <h3 class="menu-item">Dépenser</h3>
-    <h3 class="menu-item">Revenu archivé</h3>
-    <h3 class="menu-item">Dépense archivé</h3>
-    <h3 class="menu-item">Dépense mensuelle</h3>
-    <h3 class="menu-item">Analyse</h3>
- */
