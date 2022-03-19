@@ -42,3 +42,8 @@ testem.log
 Thumbs.db
 
 angular-notes
+
+library_manager/raja/typescript/guide-typescript
+library_manager/raja/typescript/poo.ts
+library_manager/raja/typescript/tsconfig.json
+library_manager/raja/typescript/variables.ts
