@@ -40,3 +40,16 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+<<<<<<< Updated upstream
+=======
+
+angular-notes
+<<<<<<< Updated upstream
+
+=======
+>>>>>>> Stashed changes
+library_manager/raja/typescript/guide-typescript
+library_manager/raja/typescript/poo.ts
+library_manager/raja/typescript/tsconfig.json
+library_manager/raja/typescript/variables.ts
+>>>>>>> Stashed changes
