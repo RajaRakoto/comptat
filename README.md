@@ -1,27 +1,54 @@
-# Comptat
+# À propos:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
+Ity projet ity dia mahasolo comptable eny anivony orinasa kely iray...
+Afaka hijerena "Bilan journalier/Mensuel/annuel sns"
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Répartion des tâches:
 
-## Code scaffolding
+## Introduction
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Vô mivoaka ilay `theme` tonga de manao concéption an'ilay projet miaraka @ sary2 kely an'taratasy sady manazava i [Brillant](#)...
 
-## Build
+Mbola eo ampanaovana concéption lery tonga d'ef manao mandray nôty ny `objet | méthode | fonction | sary | sns` mety ilaina i [Stany](#) ka manoratra izany ao anatin'ny `duty` n'tsirairay rehefa vonona.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Mbola eo ampanaovana concéption i [Brillant](#) d'ef maka inspiraka hanaovana an'ilay `diapo` sy anaingona an'ilay interface i [Raja](#)...
 
-## Running unit tests
+Rehefa avy nanoratra anatin' `duty` n'tsirairay i [Stany](#) dia efa samy afaka manomboka miasa avokoa ny rehetra...
+    *[Rivo](#) miketrika `data-set` hanaovana simulation;
+    *[Juko](#) sy [Raja](#) miketrika `fonctions | objet`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Rehefa vitan'i [Brillant](#) ilay concéption dia efa manomboka ny réalisation n'ilay projet lery sady mampiasa an'ze `data-set | fonctions | objet` disponibles. Milaza @ ra [Stany](#) lery raha toa ka misy `zavatra supplémentaires` ilain'lery.
 
-## Running end-to-end tests
+Rehefa mahavita zavatra avy ao anaty `duty` ny tsirairay dia alefa ao anatin'le `ready`... de i [Stany](#) no mi-validé an'ilay iz @ alalan' famindrana an'izany ao @ dossier `ready` n'lery, ra tsy mifanaraka t@ le zavatra nangatahin'lery kosa ilay izy dia ataon'lery ny `correction` raha tsotsotra ilay `erreur` fa si non manoratra ao anatin'le dossier `report` lery.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+De ze données ao anatin'le `ready` n'i [Stany](#) ihany no ampiasain'i [Brillant](#).
 
-## Further help
+Rehefa vita2 ny ketrik'i [Raja](#) dia manao maquillage n'ilay `interface`.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Brillant
+
+Conception et presentation du projet .
+
+## Stany
+
+Réalisateur du projet et testeur.
+
+## Rivo
+
+Responsable du `Fake database` (JSON) et `assets` (img,video,audio).
+
+## Raja
+
+Fournisseur d' `objet | fonction` et designer.
+Responsable du `diapo`.
+Responsable du `git | github`.
+
+## Juko
+
+Fournisseur d' `objet | fonction`.
+Responsable de la communication intérieur.
+
+## Tsika rehetra
+
+Tsika rehetra dia samy conseillés avokoa!
