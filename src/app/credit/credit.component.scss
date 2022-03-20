@@ -1,0 +1,58 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+  section.revenu-field {
+    border: 2px dashed green;
+    flex: 2;
+
+    .revenu-item {
+      display: flex;
+      margin-left: 2rem;
+      margin-top: 2rem;
+
+      div {
+        margin-left: 1rem;
+      }
+
+      .revenu-type {
+        text-decoration: underline;
+        font-style: italic;
+        text-transform: capitalize;
+      }
+
+      .revenu-montant {
+        font-weight: bold;
+      }
+    }
+
+    button {
+      margin-top: 2rem;
+      padding: 0.1rem 2.5rem;
+      border-radius: 1.2rem;
+    }
+  }
+
+  aside.type-field {
+    border: 2px dashed purple;
+    flex: 1;
+    padding: 2rem;
+
+    .revenu-type {
+      margin-bottom: 2rem;
+      display: flex;
+      cursor: pointer;
+
+      .revenu-type-libelle {
+        margin-left: 1rem;
+      }
+    }
+
+    .revenu-type:hover {
+      * {
+        color: dodgerblue;
+      }
+    }
+  }
+}
