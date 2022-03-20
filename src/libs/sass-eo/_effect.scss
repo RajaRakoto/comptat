@@ -13,7 +13,6 @@
 /// Ajouter un effet d'ombre exterieur sur un container
 /// @param {string} $opacity [solid, small, medium, large, none] - opacite de l'ombre
 @mixin effect-shadow-box($opacity: solid) {
-
   @if ($opacity == solid) {
     box-shadow: 1px 1px 2px 1px rgba(20, 20, 20, 0.59);
   }
@@ -68,15 +67,15 @@
 /// @param {string} $color - couleur du lueur
 @mixin effect-light($opacity: medium, $color: #eee) {
   @if ($opacity == small) {
-    text-shadow: 0px 1px 2px $color; 
+    text-shadow: 0px 1px 2px $color;
   }
-  
+
   @if ($opacity == medium) {
-    text-shadow: 0px 1px 8px $color; 
+    text-shadow: 0px 1px 8px $color;
   }
-  
+
   @if ($opacity == large) {
-    text-shadow: 0px 1px 20px $color; 
+    text-shadow: 0px 1px 20px $color;
   }
 
   @if ($opacity == none) {
