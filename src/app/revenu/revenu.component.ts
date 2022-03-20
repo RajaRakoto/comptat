@@ -8,7 +8,7 @@ import { REVENU_DATA } from './revenu.service';
 })
 export class RevenuComponent implements OnInit {
   headers = ['heure', 'type', 'source', 'montant'];
-  footers = ['24 h', 'Total', 100];
+  footers = ['24 h', 'Total', 0];
   revenus = REVENU_DATA;
 
   constructor() {}
@@ -16,6 +16,7 @@ export class RevenuComponent implements OnInit {
   ngOnInit(): void {
     this.totalRevenu();
   }
+
   totalRevenu(){
      for(let i=0; i<this.revenus.length; i++){
         this.footers[2] = +this.footers[2] + this.revenus[i].montant;
