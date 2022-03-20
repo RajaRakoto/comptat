@@ -1,7 +1,10 @@
+@import "../../libs/sass-eo/ALL-IMPORT";
+
 .container {
     width: 100%;
     height: 100%;
     display: flex;
+    @include animation-zoom(in);
 
     section.depense-field {
         border: 2px dashed green;
