@@ -17,9 +17,10 @@ import { AnalyseComponent } from './analyse/analyse.component';
 import { NewDepenseComponent } from './dialog-box/new-depense/new-depense.component';
 import { NewCreditComponent } from './dialog-box/new-credit/new-credit.component';
 import { CaisseComponent } from './dialog-box/caisse/caisse.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, RevenuComponent, DepenseComponent, CreditComponent, DepenserComponent, RevenuArchiveComponent, DepenseArchiveComponent, DepenseMensuelleComponent, AnalyseComponent, NewDepenseComponent, NewCreditComponent, CaisseComponent],
+  declarations: [AppComponent, HomeComponent, RevenuComponent, DepenseComponent, CreditComponent, DepenserComponent, RevenuArchiveComponent, DepenseArchiveComponent, DepenseMensuelleComponent, AnalyseComponent, NewDepenseComponent, NewCreditComponent, CaisseComponent, LoginComponent],
   imports: [BrowserModule, AppRoutingModule, MaterialModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
