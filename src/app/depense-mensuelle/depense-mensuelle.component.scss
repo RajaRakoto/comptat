@@ -1,0 +1,78 @@
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+    section.depense-field {
+        border: 2px dashed green;
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        .depense-item {
+            display: flex;
+            margin-top: 1.2rem;
+
+            .libelle {
+                _border: 1px dashed magenta;
+                text-transform: capitalize;
+                width: 160px;
+                text-align: end;
+            }
+
+            .montant {
+                font-weight: bold;
+                margin-left: 1rem;
+                _border: 1px dashed yellowgreen;
+                width: 160px;
+
+                input {
+                    color: #2d2d2d;
+                    width: 130px;
+                }
+            }
+        }
+
+        button {
+            margin-top: 2rem;
+            padding: 0.1rem 2.5rem;
+            border-radius: 1.2rem;
+        }
+    }
+
+    aside.bilan-field {
+        flex: 1;
+        border: 2px dashed darkmagenta;
+        padding-top: 1.2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .date {
+            color: dodgerblue;
+            font-style: italic;
+            text-decoration: underline;
+            width: 100%;
+            text-align: center;
+        }
+
+        .bilan-item {
+            padding-top: 1.5rem;
+            display: flex;
+
+            .bilan-libelle {
+                _border: 2px dashed magenta;
+                text-align: end;
+                width: 90px;
+            }
+
+            .bilan-montant {
+                _border: 2px dashed yellowgreen;
+                width: 150px;
+                padding-left: 1rem;
+                font-weight: bold;
+            }
+        }
+    }
+}
