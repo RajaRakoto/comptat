@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DEPENSE_DATA } from './depense.service';
 
-export interface Depense {
+/*export interface Depense {
   type: string;
   heure: string;
   motif: string;
@@ -33,7 +34,7 @@ const DEPENSE_DATA: Depense[] = [
     montant: 9000,
   },
 ];
-
+*/
 @Component({
   selector: 'app-depense',
   templateUrl: './depense.component.html',
