@@ -62,6 +62,7 @@ export class DepenserComponent implements OnInit {
 
     this.dialog.open(NewDepenseComponent, {
       width: '350px',
+      panelClass: 'dialog-box',
     });
 
     this.dialog.afterAllClosed.subscribe(() => {

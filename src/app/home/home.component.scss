@@ -1,48 +1,57 @@
+@import "../../imports/typography";
+@import "../../libs/sass-eo/ALL-IMPORT";
 
 mat-toolbar {
-    background-color: #2d2d2d;
+  background-color: #333;
+}
+
+@mixin border-style() {
+  border: 2px solid gray;
+  border-radius: 5px;
 }
 
 .container {
-    border: 2px solid red;
-    width: 100vw;
-    height: 100vh;
+  //   border: 2px solid red;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+
+  .menu {
+    // border: 2px green solid;
+    flex-direction: column;
+    padding: 0 2rem;
+    padding-top: 3%;
+    padding-bottom: 3%;
     display: flex;
-
-    .menu {
-        padding: 0 2rem;
-        display: flex;
-        flex-direction: column;
-        border: 2px green solid;
-        height: 100%;
+    height: 100%;
+    background-color: #333;
+    z-index: 1;
+    @include effect-shadow-box(medium);
+    @include animation-fade(in);
         
-        .menu-item {
-            margin-top: 1.3rem;
-            font-weight: 500;
-            cursor: pointer;
+    .menu-item {
+      margin-top: 1rem;
+      font-family: Quicksand;
+      font-weight: bolder;
+      cursor: pointer;
 
-            &:hover {
-                color: skyblue
-            }
-        }
-
-        .selected-menu-item {
-            color: dodgerblue;
-        }
+      &:hover {
+        @include animation-pulse();
+      }
     }
 
-    .main {
-        flex: 1;
-        height: 100%;
-        border: yellow;
-        display: flex;
-        flex-direction: column;
+    .selected-menu-item {
+      color: dodgerblue;
     }
 
-    mat-toolbar {
-        border: 2px solid purple;
-        display: flex;
-        justify-content: space-around;
+    h1 {
+      padding-bottom: 5%;
+
+      span {
+        color: silver;
+      }
+    }
+  }
 
         .caisse {
             cursor: pointer;
@@ -51,22 +60,45 @@ mat-toolbar {
                 color: goldenrod;
             }
         }
+  .main {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 
-        .user {
-            display: flex;
-            align-items: center;
+  mat-toolbar {
+    // border: 2px solid purple;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding-left: 20%;
+    padding-right: 20%;
+    @include animation-slide(in, down);
 
-            mat-icon {
-                transform: scale(1.5);
-                margin-right: 0.8rem;
-            }
-        }
+    .caisse {
+      span {
+        color: goldenrod;
+      }
     }
 
-    section {
-        height: 100%;
-        width: 100%;
-        border: 2px solid dodgerblue;
-        overflow-y: auto;
+    .user {
+      display: flex;
+      align-items: center;
+
+      mat-icon {
+        transform: scale(1.5);
+        margin-right: 0.8rem;
+      }
     }
+  }
+
+  section {  
+    // border: 2px solid dodgerblue;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    padding: 5%;
+    @include animation-fade(in);
+  }
 }

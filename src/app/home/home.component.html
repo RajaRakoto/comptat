@@ -1,5 +1,10 @@
 <div class="container">
   <nav class="menu">
+    <h1>
+      Comptat App
+      <br />
+      <span>v1.0.0</span>
+    </h1>
     <h3
       class="menu-item"
       [routerLink]="['/revenu']"
@@ -61,12 +66,11 @@
   <div class="main">
     <mat-toolbar>
       <div class="caisse" (click)="onCaisse()">
-        Caisse: <span>379.500 Ar</span>
+        <strong>💰 Caisse : </strong> <span>379.500 Ar</span>
       </div>
-      <div class="date">Mardi 17 Mars 2022</div>
+      <div class="date">🗓 Mardi 17 Mars 2022</div>
       <div class="user">
-        <mat-icon class="mat-18">person</mat-icon>
-        Admin
+        <strong>👤 Admin</strong>
       </div>
     </mat-toolbar>
 

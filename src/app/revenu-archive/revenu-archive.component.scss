@@ -4,7 +4,7 @@
   padding: 1rem;
 
   .daily-revenu {
-      border: 2px dashed darkgreen;
+      _border: 2px dashed darkgreen;
       padding-bottom: 2rem;
 
       .daily-title {
@@ -28,7 +28,7 @@
     td,
     th {
       padding: 1rem 2rem;
-      border: 1px solid rgb(233, 233, 233);
+      border: 1px solid grey;
     }
 
     .column-heure {
