@@ -15,9 +15,10 @@ import { DepenseArchiveComponent } from './depense-archive/depense-archive.compo
 import { DepenseMensuelleComponent } from './depense-mensuelle/depense-mensuelle.component';
 import { AnalyseComponent } from './analyse/analyse.component';
 import { NewDepenseComponent } from './dialog-box/new-depense/new-depense.component';
+import { NewCreditComponent } from './dialog-box/new-credit/new-credit.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, RevenuComponent, DepenseComponent, CreditComponent, DepenserComponent, RevenuArchiveComponent, DepenseArchiveComponent, DepenseMensuelleComponent, AnalyseComponent, NewDepenseComponent],
+  declarations: [AppComponent, HomeComponent, RevenuComponent, DepenseComponent, CreditComponent, DepenserComponent, RevenuArchiveComponent, DepenseArchiveComponent, DepenseMensuelleComponent, AnalyseComponent, NewDepenseComponent, NewCreditComponent],
   imports: [BrowserModule, AppRoutingModule, MaterialModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
