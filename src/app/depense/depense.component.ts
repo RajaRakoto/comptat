@@ -1,38 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-export interface Depense {
-  type: string;
-  heure: string;
-  motif: string;
-  montant: number;
-}
-
-const DEPENSE_DATA: Depense[] = [
-  {
-    heure: '09:47',
-    type: 'Alimentaire',
-    motif: 'Aliment',
-    montant: 50000,
-  },
-  {
-    heure: '13:09',
-    type: 'Culte',
-    motif: 'Pour le Pasteur',
-    montant: 100000,
-  },
-  {
-    heure: '15:31',
-    type: 'Action social',
-    motif: 'Reboisement',
-    montant: 200000,
-  },
-  {
-    heure: '17:11',
-    type: 'Extrat',
-    motif: 'Group électrogène',
-    montant: 9000,
-  },
-];
+import { DEPENSE_DATA } from './depense.service';
 
 @Component({
   selector: 'app-depense',
@@ -41,10 +8,18 @@ const DEPENSE_DATA: Depense[] = [
 })
 export class DepenseComponent implements OnInit {
   headers = ['heure', 'type', 'motif', 'montant'];
-  footers = ['24 h', 'Total', 4076000];
+  footers = ['24 h', 'Total', 0];
   depenses = DEPENSE_DATA;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.totalDepense();
+  }
+
+  totalDepense() {
+    for (let i = 0; i < this.depenses.length; i++) {
+      this.footers[2] = +this.footers[2] + this.depenses[i].montant;
+    }
+  }
 }
