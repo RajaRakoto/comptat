@@ -16,3 +16,6 @@ html {
 
 // Normalize permet aux navigateurs de rendre tous les éléments de manière plus cohérente et conforme aux normes modernes
 @include normalize();
+
+// Personnalisation du scrolling bar
+@include bar-scrolling(rgb(197, 134, 18), rgb(148, 105, 24), #333);
