@@ -29,6 +29,13 @@ mat-toolbar {
     @include effect-shadow-box(medium);
     @include animation-fade(in);
 
+    img {
+      @include image-responsive();
+      width: 150px;
+      height: 100px;
+      // @include position-block-center();
+    }
+
     .menu-item {
       margin-top: 1.3rem;
       font-family: Quicksand;
