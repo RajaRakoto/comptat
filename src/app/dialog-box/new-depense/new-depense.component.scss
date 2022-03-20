@@ -11,10 +11,6 @@
         text-transform: capitalize;
     }
 
-    * {
-        color: #2d2d2d;
-    }
-
     form {
         display: flex;
         flex-direction: column;
@@ -46,5 +42,6 @@
     button {
         padding: 0.1rem 2.5rem;
         border-radius: 1.2rem;
+        background-color: dodgerblue;
     }
 }

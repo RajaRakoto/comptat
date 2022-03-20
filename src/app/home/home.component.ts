@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   onCaisse() {
     this.dialog.open(CaisseComponent, {
       width: '450px',
+      panelClass: 'dialog-box',
     });
   }
 }

@@ -10,10 +10,6 @@
     text-transform: capitalize;
   }
 
-  * {
-    color: #2d2d2d;
-  }
-
   section.caisse-field {
     display: flex;
     justify-content: space-around;
@@ -42,6 +38,7 @@
   button {
     padding: 0 2rem;
     border-radius: 2rem;
+    background-color: dodgerblue;
   }
     }
 

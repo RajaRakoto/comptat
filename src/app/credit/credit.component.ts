@@ -60,6 +60,7 @@ export class CreditComponent implements OnInit {
 
     this.dialog.open(NewCreditComponent, {
       width: '350px',
+      panelClass: 'dialog-box',
     });
 
     this.dialog.afterAllClosed.subscribe(() => {

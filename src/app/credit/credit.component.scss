@@ -4,13 +4,13 @@
   display: flex;
 
   section.revenu-field {
-    border: 2px dashed green;
+    _border: 2px dashed green;
     flex: 2;
 
     .revenu-item {
       display: flex;
       margin-left: 2rem;
-      margin-top: 2rem;
+      margin-bottom: 2rem;
 
       div {
         margin-left: 1rem;
@@ -35,9 +35,10 @@
   }
 
   aside.type-field {
-    border: 2px dashed purple;
+    _border: 2px dashed purple;
+    border-left: 1px solid silver;
     flex: 1;
-    padding: 2rem;
+    padding: 0 2rem;
 
     .revenu-type {
       margin-bottom: 2rem;
