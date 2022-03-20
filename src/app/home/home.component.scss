@@ -101,7 +101,7 @@ mat-toolbar {
     min-width: 500px;
     @include position-block-center;
     @include animation-slide(in, down);
-    @include effect-shadow-box(small);
+    @include effect-shadow-box(solid);
 
     .toolbar-items {
       @include position-flex-center;
