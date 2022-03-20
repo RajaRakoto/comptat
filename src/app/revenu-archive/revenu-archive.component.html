@@ -1,1 +1,32 @@
-<p>revenu-archive works!</p>
+<div class="container">
+  <article class="daily-revenu" *ngFor="let dailyRevenu of revenuArchive">
+    <h3 class="daily-title">
+      {{ dailyRevenu.date }}
+    </h3>
+    <table>
+      <thead>
+        <th
+          *ngFor="let header of headers"
+          class="column-{{ header.toLowerCase() }}"
+        >
+          {{ header }}
+        </th>
+      </thead>
+      <tr *ngFor="let revenu of dailyRevenu.revenus">
+        <td class="column-heure">{{ revenu.heure }}</td>
+        <td class="column-type">{{ revenu.type }}</td>
+        <td class="column-source">{{ revenu.source }}</td>
+        <td class="column-montant">
+          {{ revenu.montant | currency: " ":"symbol":"1.0" }} Ar
+        </td>
+      </tr>
+      <tfoot>
+        <td class="column-heure">24 h</td>
+        <td class="column-type-source" colspan="2">Total</td>
+        <td class="column-montant">
+          {{ dailyRevenu.total | currency: " ":"symbol":"1.0" }} Ar
+        </td>
+      </tfoot>
+    </table>
+  </article>
+</div>
