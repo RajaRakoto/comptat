@@ -3,7 +3,7 @@
     <!-- <img src="test" alt="official-logo" /> -->
 
     <h1 class="menu-header" [routerLink]="['./']">
-      Comptat <span style="color: orange">App</span>
+      Comptat <span style="color: gold">App</span>
     </h1>
 
     <h3
@@ -67,13 +67,14 @@
 
   <div class="main">
     <mat-toolbar>
-      <div class="caisse">
-        <strong>💰 Caisse : </strong> <span>379.500 Ar</span>
-      </div>
-      <div class="date">🗓 Mardi 17 Mars 2022</div>
-      <div class="user">
+      <div class="toolbar-items">
+        <span class="items"
+          ><strong>💰 Caisse : </strong>
+          <span style="color: gold">379.500 Ar</span></span
+        >
+        <span class="items">🗓 Mardi 17 Mars 2022</span>
         <!-- <mat-icon class="mat-18">person</mat-icon> -->
-        <strong>👤 Admin</strong>
+        <span class="items"><strong>👤 Admin</strong></span>
       </div>
     </mat-toolbar>
 

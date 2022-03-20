@@ -65,7 +65,7 @@ mat-toolbar {
     }
 
     .selected-menu-item {
-      color: rgb(0, 128, 255);
+      color: rgb(83, 169, 255);
       background-color: rgb(47, 45, 42);
       border-radius: 10px;
       padding: 10px;
@@ -93,26 +93,23 @@ mat-toolbar {
 
   //status bar (caisse, date, admin)
   mat-toolbar {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
+    width: 50%;
+    margin-top: 1%;
     padding-left: 20%;
     padding-right: 20%;
+    border-radius: 20px;
+    min-width: 500px;
+    @include position-block-center;
     @include animation-slide(in, down);
+    @include effect-shadow-box(small);
 
-    .caisse {
-      span {
-        color: goldenrod;
-      }
-    }
+    .toolbar-items {
+      @include position-flex-center;
+      padding: 20px;
 
-    .user {
-      display: flex;
-      align-items: center;
-
-      mat-icon {
-        transform: scale(1.5);
-        margin-right: 0.8rem;
+      .items {
+        margin-left: 10%;
+        margin-right: 10%;
       }
     }
   }
