@@ -13,7 +13,7 @@ export interface DailyDepense {
   total: number;
 }
 
-const REVENU_DATA_1: Depense[] = [
+const DEPENSE_DATA_1: Depense[] = [
   {
     heure: '09:47',
     type: 'Alimentaire',
@@ -40,7 +40,7 @@ const REVENU_DATA_1: Depense[] = [
   },
 ];
 
-const REVENU_DATA_2: Depense[] = [
+const DEPENSE_DATA_2: Depense[] = [
   {
     heure: '07:02',
     type: 'Alimentaire',
@@ -61,16 +61,16 @@ const REVENU_DATA_2: Depense[] = [
   },
 ];
 
-const DAILY_REVENU_DATA_1: DailyDepense = {
+const DAILY_DEPENSE_DATA_1: DailyDepense = {
   date: 'Dimanche 15 Mars 2022',
-  depenses: REVENU_DATA_1,
-  total: totalDailyDepense(REVENU_DATA_1),
+  depenses: DEPENSE_DATA_1,
+  total: totalDailyDepense(DEPENSE_DATA_1),
 };
 
-const DAILY_REVENU_DATA_2: DailyDepense = {
+const DAILY_DEPENSE_DATA_2: DailyDepense = {
   date: 'Lundi 16 Mars 2022',
-  depenses: REVENU_DATA_2,
-  total: totalDailyDepense(REVENU_DATA_2),
+  depenses: DEPENSE_DATA_2,
+  total: totalDailyDepense(DEPENSE_DATA_2),
 };
 
 function totalDailyDepense(depenses: Depense[]) {
@@ -86,7 +86,7 @@ function totalDailyDepense(depenses: Depense[]) {
 })
 export class DepenseArchiveComponent implements OnInit {
   headers = ['heure', 'type', 'motif', 'montant'];
-  depenseArchive = [DAILY_REVENU_DATA_1, DAILY_REVENU_DATA_2];
+  depenseArchive = [DAILY_DEPENSE_DATA_1, DAILY_DEPENSE_DATA_2];
 
   constructor() {}
 
