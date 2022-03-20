@@ -3,9 +3,9 @@
 Ity projet ity dia mahasolo comptable eny anivony orinasa kely iray...
 Afaka hijerena "Bilan journalier/Mensuel/annuel sns"
 
-# Répartion des tâches:
+<hr>
 
-## Introduction
+# Répartion des tâches:
 
 Vô mivoaka ilay `theme` tonga de manao concéption an'ilay projet miaraka @ sary2 kely an'taratasy sady manazava i [Brillant](#)...
 
@@ -51,3 +51,17 @@ Responsable de la communication intérieur.
 ## Tsika rehetra
 
 Tsika rehetra dia samy conseillés avokoa!
+
+<hr>
+
+# TODO list 
+
+- [x]  Revenu
+- [x]  Depense
+- [ ]  Credit
+- [ ]  Depenser
+- [ ]  Revenu archivE
+- [ ]  Depense archivE
+- [ ]  Depense mensuelle
+- [ ]  Analyse
+

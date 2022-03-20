@@ -1,28 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-export interface Revenu {
-  type: string;
-  heure: string;
-  source: string;
-  montant: number;
-}
-
-const REVENU_DATA: Revenu[] = [
-  {
-    heure: '09:47',
-    type: 'Massage',
-    source: 'IIF3MG Analakely',
-    montant: 30000,
-  },
-  { heure: '13:09', type: 'Formation', source: 'Formation', montant: 220000 },
-  {
-    heure: '15:31',
-    type: 'Aide à domicile',
-    source: 'M4C11 Anosy',
-    montant: 50000,
-  },
-  { heure: '17:11', type: 'Garde malade', source: 'HJRA', montant: 9000 },
-];
+import { REVENU_DATA } from './revenu.service';
 
 @Component({
   selector: 'app-revenu',
@@ -31,10 +8,17 @@ const REVENU_DATA: Revenu[] = [
 })
 export class RevenuComponent implements OnInit {
   headers = ['heure', 'type', 'source', 'montant'];
-  footers = ['24 h', 'Total', 4076000];
+  footers = ['24 h', 'Total', 100];
   revenus = REVENU_DATA;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.totalRevenu();
+  }
+  totalRevenu(){
+     for(let i=0; i<this.revenus.length; i++){
+        this.footers[2] = +this.footers[2] + this.revenus[i].montant;
+      }
+    }
 }

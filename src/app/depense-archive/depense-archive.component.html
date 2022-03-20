@@ -1,1 +1,32 @@
-<p>depense-archive works!</p>
+<div class="container">
+  <article class="daily-depense" *ngFor="let dailyDepense of depenseArchive">
+    <h3 class="daily-title">
+      {{ dailyDepense.date }}
+    </h3>
+    <table>
+      <thead>
+        <th
+          *ngFor="let header of headers"
+          class="column-{{ header.toLowerCase() }}"
+        >
+          {{ header }}
+        </th>
+      </thead>
+      <tr *ngFor="let depense of dailyDepense.depenses">
+        <td class="column-heure">{{ depense.heure }}</td>
+        <td class="column-type">{{ depense.type }}</td>
+        <td class="column-motif">{{ depense.motif }}</td>
+        <td class="column-montant">
+          {{ depense.montant | currency: " ":"symbol":"1.0" }} Ar
+        </td>
+      </tr>
+      <tfoot>
+        <td class="column-heure">24 h</td>
+        <td class="column-type-motif" colspan="2">Total</td>
+        <td class="column-montant">
+          {{ dailyDepense.total | currency: " ":"symbol":"1.0" }} Ar
+        </td>
+      </tfoot>
+    </table>
+  </article>
+</div>
