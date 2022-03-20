@@ -60,7 +60,9 @@
 
   <div class="main">
     <mat-toolbar>
-      <div class="caisse">Caisse: <span>379.500 Ar</span></div>
+      <div class="caisse" (click)="onCaisse()">
+        Caisse: <span>379.500 Ar</span>
+      </div>
       <div class="date">Mardi 17 Mars 2022</div>
       <div class="user">
         <mat-icon class="mat-18">person</mat-icon>

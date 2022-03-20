@@ -45,6 +45,8 @@ mat-toolbar {
         justify-content: space-around;
 
         .caisse {
+            cursor: pointer;
+
             span {
                 color: goldenrod;
             }
