@@ -48,3 +48,21 @@
     box-shadow: 1px 1px 20px #111 inset;
   }
 }
+
+//TODO: update
+/// Ajouter un lueur (effet de lumiere) externe sur un text - souvent utiliser avec le survol du curseur (hover)
+/// @param {string} $opacity [small, medium, large] - opacite du lueur
+/// @param {string} $color - couleur du lueur
+@mixin effect-light($opacity: medium, $color: #eee) {
+  @if ($opacity == small) {
+    text-shadow: 0px 1px 2px $color; 
+  }
+  
+  @if ($opacity == medium) {
+    text-shadow: 0px 1px 8px $color; 
+  }
+  
+  @if ($opacity == large) {
+    text-shadow: 0px 1px 20px $color; 
+  }
+}
