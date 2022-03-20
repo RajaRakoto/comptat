@@ -1,1 +1,39 @@
-<p>analyse works!</p>
+<div class="container">
+  <article class="anual-bilan" *ngFor="let anualBilan of anualBilans">
+    <h3 class="year-title">Bilan anuel {{ anualBilan.date }}</h3>
+    <table>
+      <thead>
+        <th
+          *ngFor="let header of headers"
+          class="column-{{ header.toLowerCase() }}"
+        >
+          {{ header }}
+        </th>
+      </thead>
+      <tr *ngFor="let bilan of anualBilan.bilans">
+        <td class="column-mois">{{ bilan.mois }}</td>
+        <td class="column-revenu">
+          {{ bilan.revenu | currency: " ":"symbol":"1.0" }} Ar
+        </td>
+        <td class="column-depense">
+          {{ bilan.depense | currency: " ":"symbol":"1.0" }} Ar
+        </td>
+        <td class="column-montant">
+          {{ bilan.gain | currency: " ":"symbol":"1.0" }} Ar
+        </td>
+      </tr>
+      <tfoot>
+        <td class="column-mois">{{ anualBilan.total.mois }}</td>
+        <td class="column-revenu">
+          {{ anualBilan.total.revenu | currency: " ":"symbol":"1.0" }} Ar
+        </td>
+        <td class="column-depense">
+          {{ anualBilan.total.depense | currency: " ":"symbol":"1.0" }} Ar
+        </td>
+        <td class="column-montant">
+          {{ anualBilan.total.gain | currency: " ":"symbol":"1.0" }} Ar
+        </td>
+      </tfoot>
+    </table>
+  </article>
+</div>
