@@ -28,7 +28,7 @@ mat-toolbar {
     background-color: #333;
     z-index: 1;
 
-    @include effect-shadow-box(medium);
+    @include effect-shadow-box-inset(medium);
     @include animation-fade(in);
 
     img {
@@ -52,11 +52,12 @@ mat-toolbar {
     }
 
     .selected-menu-item {
-      color: dodgerblue;
-      background-color: rgb(47, 45, 45);
+      color: rgb(57, 150, 243);
+      background-color: rgb(47, 45, 42);
       border-radius: 10px;
       padding: 10px;
       transition: 0.5s;
+      @include effect-shadow-box-inset(small);
     }
 
     h1 {
