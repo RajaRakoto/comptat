@@ -11,8 +11,13 @@
 
 //TODO: verified
 /// Ajouter un effet d'ombre exterieur sur un container
-/// @param {string} $opacity [small, medium, large, none] - opacite de l'ombre
-@mixin effect-shadow-box($opacity: medium) {
+/// @param {string} $opacity [solid, small, medium, large, none] - opacite de l'ombre
+@mixin effect-shadow-box($opacity: solid) {
+
+  @if ($opacity == solid) {
+    box-shadow: 1px 1px 2px 1px rgba(20, 20, 20, 0.59);
+  }
+
   @if ($opacity == small) {
     box-shadow: 1px 2px 10px 1px rgba(0, 0, 0, 0.59);
     -webkit-box-shadow: 1px 2px 10px 1px rgba(0, 0, 0, 0.59);
