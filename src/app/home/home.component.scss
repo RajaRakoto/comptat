@@ -85,11 +85,17 @@ mat-toolbar {
     .user {
       display: flex;
       align-items: center;
+      text-transform: capitalize;
+      cursor: pointer;
 
       mat-icon {
         transform: scale(1.5);
         margin-right: 0.8rem;
       }
+    }
+
+    .date {
+      text-transform: capitalize;
     }
   }
 

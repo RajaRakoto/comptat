@@ -4,7 +4,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
-import {} from '@angular/material';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {} from '@angular/material';
 import {} from '@angular/material';
 import {} from '@angular/material';
@@ -17,6 +17,7 @@ let materials = [
   MatTableModule,
   MatDialogModule,
   MatIconModule,
+  MatSnackBarModule,
 ];
 
 @NgModule({

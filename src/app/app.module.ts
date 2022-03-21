@@ -1,5 +1,5 @@
 import { MaterialModule } from './modules/material/material.module';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +18,8 @@ import { NewDepenseComponent } from './dialog-box/new-depense/new-depense.compon
 import { NewCreditComponent } from './dialog-box/new-credit/new-credit.component';
 import { CaisseComponent } from './dialog-box/caisse/caisse.component';
 import { LoginComponent } from './components/login/login.component';
+import { registerLocaleData } from '@angular/common';
+import * as fr from '@angular/common/locales/fr';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,11 @@ import { LoginComponent } from './components/login/login.component';
     MaterialModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'fr-FR' }],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor() {
+    registerLocaleData(fr.default);
+  }
+}

@@ -1,31 +1,26 @@
+import { RevenuItem } from './../class/revenu';
+import { REVENUS_DATA, NEW_CREDITS_DATA } from './../data/revenu.data';
 import { Injectable } from '@angular/core';
-
-export interface Revenu {
-  type: string;
-  heure: string;
-  source: string;
-  montant: number;
-}
+import { DailyRevenu } from '../class/dailyRevenu';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RevenuService {
-  newRevenu: Revenu = {
-    heure: '',
-    montant: 0,
-    source: '',
-    type: '',
-  };
+  revenuToday: DailyRevenu;
+  newRevenu?: RevenuItem;
+  newCredits: RevenuItem[] = [];
 
-  constructor() {}
+  constructor() {
+    this.revenuToday = new DailyRevenu(`${new Date()}`, REVENUS_DATA);
+    this.newCredits = NEW_CREDITS_DATA;
+  }
 
   dropNewRevenu() {
-    this.newRevenu = {
-      heure: '',
-      montant: 0,
-      source: '',
-      type: '',
-    };
+    this.newRevenu = undefined;
+  }
+
+  confirmRevenu(revenus: RevenuItem[]) {
+    this.revenuToday.insertRevenu(revenus);
   }
 }

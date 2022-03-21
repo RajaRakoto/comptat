@@ -37,6 +37,7 @@
       class="menu-item"
       [routerLink]="['revenu-archive']"
       routerLinkActive="selected-menu-item"
+      *ngIf="userType === 'admin'"
     >
       Revenu archivé
     </h3>
@@ -44,6 +45,7 @@
       class="menu-item"
       [routerLink]="['depense-archive']"
       routerLinkActive="selected-menu-item"
+      *ngIf="userType === 'admin'"
     >
       Dépense archivé
     </h3>
@@ -51,6 +53,7 @@
       class="menu-item"
       [routerLink]="['depense-mensuelle']"
       routerLinkActive="selected-menu-item"
+      *ngIf="userType === 'admin'"
     >
       Dépense mensuelle
     </h3>
@@ -58,6 +61,7 @@
       class="menu-item"
       [routerLink]="['analyse']"
       routerLinkActive="selected-menu-item"
+      *ngIf="userType === 'admin'"
     >
       Analyse
     </h3>
@@ -66,11 +70,12 @@
   <div class="main">
     <mat-toolbar>
       <div class="caisse" (click)="onCaisse()">
-        <strong>💰 Caisse : </strong> <span>379.500 Ar</span>
+        <strong>💰 Caisse : </strong>
+        <span>{{ caisse | currency: " ":"symbol":"1.0" }} Ar</span>
       </div>
-      <div class="date">🗓 Mardi 17 Mars 2022</div>
-      <div class="user">
-        <strong>👤 Admin</strong>
+      <div class="date">🗓 {{ today | date: "EEEE dd MMMM YYYY" }}</div>
+      <div class="user" (click)="onLogout()">
+        <strong>👤 {{ userType }}</strong>
       </div>
     </mat-toolbar>
 

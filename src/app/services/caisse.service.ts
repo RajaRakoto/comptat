@@ -1,9 +1,46 @@
+import { RevenuItem } from './../class/revenu';
+import { CAISS_DATA } from './../data/caisse.data';
 import { Injectable } from '@angular/core';
+import { Caisse } from '../class/caisse';
+import { Subject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CaisseService {
+  caisse: Caisse;
+  caisseAssistSubject = new Subject<number>();
 
-  constructor() { }
+  constructor() {
+    this.caisse = CAISS_DATA;
+    this.emitCaisseAssist();
+  }
+
+  emitCaisseAssist() {
+    this.caisseAssistSubject.next(this.caisse.assist);
+  }
+
+  newCredit(userType: 'assist' | 'admin', revenus: RevenuItem[]) {
+    let sum = 0;
+    revenus.forEach((r) => (sum += r.montant));
+
+    if (userType === 'assist') {
+      this.caisse.assist += sum;
+    } else {
+      this.caisse.admin += sum;
+    }
+    this.emitCaisseAssist();
+  }
+
+  newDepense(userType: 'assist' | 'admin', depenses: RevenuItem[]) {
+    let sum = 0;
+    depenses.forEach((d) => (sum += d.montant));
+
+    if (userType === 'assist') {
+      if (this.caisse.assist >= sum) this.caisse.assist -= sum;
+    } else {
+      if (this.caisse.admin >= sum) this.caisse.admin -= sum;
+    }
+    this.emitCaisseAssist();
+  }
 }

@@ -37,6 +37,32 @@ input {
   }
 }
 
+.toast-warn {
+  * {
+    color: deeppink !important;
+    font-weight: bold !important;
+  }
+
+  button {
+    * {
+      color: dodgerblue !important;
+    }
+  }
+}
+
+.toast-success {
+  * {
+    color: limegreen !important;
+    font-weight: bold !important;
+  }
+
+  button {
+    * {
+      color: dodgerblue !important;
+    }
+  }
+}
+
 
 
 // Normalize permet aux navigateurs de rendre tous les éléments de manière plus cohérente et conforme aux normes modernes

@@ -4,4 +4,11 @@ export class Caisse {
     public assist: number,
     public admin: number
   ) {}
+
+  verser(montant: number) {
+    if (this.assist >= montant) {
+      this.assist -= montant;
+      this.admin += montant;
+    }
+  }
 }

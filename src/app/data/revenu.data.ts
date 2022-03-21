@@ -1,23 +1,24 @@
-export class Revenu {
-    constructor(
-        public id_revenu: number,
-        public heure: string,
-        public type: string,
-        public source: string,
-        public montant: number){
+import { RevenuItem } from './../class/revenu';
 
-    }
-}
-export const revenu01= new Revenu(1,'09:47','Massage','HJRA',30000);
-export const revenu02= new Revenu(2,'15:31', 'Formation','Formation',220000);
-export const revenu03= new Revenu(3,'16:11', 'Vente','Client',21000);
-export const REVENU_DATA =[revenu01,revenu02,revenu03];
+export const REVENUS_DATA = [
+  new RevenuItem('09:47', 'massage', 'HJRA', 30000),
+  new RevenuItem('15:31', 'formation', 'Formation', 220000),
+  new RevenuItem('16:11', 'droit de stage', 'Stage', 21000),
+];
 
-export class revenuJournalier{
-    constructor(
-        public id_revenuJournalier: number,
-        public date: string,
-        public totalJour : number) {
-        
-    }
-}
+export const NEW_CREDITS_DATA: RevenuItem[] = [
+  {
+    date: '08:41',
+    type: 'massage',
+    source: 'IIF3MG Analakely',
+    montant: 40000,
+  },
+  { date: '10:09', type: 'formation', source: 'Formation', montant: 220000 },
+  {
+    date: '12:31',
+    type: 'aide à domicile',
+    source: 'M4C11 Anosy',
+    montant: 52000,
+  },
+  { date: '13:11', type: 'garde malade', source: 'HJRA', montant: 9000 },
+];
