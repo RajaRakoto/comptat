@@ -1,44 +1,20 @@
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { UserService } from './../../services/user.service';
+import { CaisseService } from './../../services/caisse.service';
 import { DepenseService } from 'src/app/services/depense.service';
 import { NewDepenseComponent } from 'src/app/dialog-box/new-depense/new-depense.component';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { DepenseItem } from 'src/app/class/depense';
 
-export interface Depense {
-  type: string;
-  heure: string;
-  motif: string;
-  montant: number;
-}
-
-const DEPENSE_DATA: Depense[] = [
-  {
-    heure: '07:02',
-    type: 'Alimentaire',
-    motif: 'Aliment',
-    montant: 30000,
-  },
-  {
-    heure: '10:19',
-    type: 'Culte',
-    motif: 'Pour le Pasteur',
-    montant: 140000,
-  },
-  {
-    heure: '12:22',
-    type: 'Action social',
-    motif: 'Reboisement',
-    montant: 150000,
-  },
-];
-
-const DEPENSE_TYPE = [
-  'Alimentaire',
-  'Provision',
-  'Culte',
-  'Action',
-  'Consultation',
-  'Déplacement',
-  'Extrat',
+const DEPENSE_TYPE: any[] = [
+  'alimentaire',
+  'provision',
+  'culte',
+  'action',
+  'consultation',
+  'déplacement',
+  'extrat',
 ];
 
 @Component({
@@ -47,18 +23,32 @@ const DEPENSE_TYPE = [
   styleUrls: ['./depenser.component.scss'],
 })
 export class DepenserComponent implements OnInit {
-  depenses = DEPENSE_DATA;
+  depenses: DepenseItem[] = [];
   types = DEPENSE_TYPE;
 
   constructor(
     private dialog: MatDialog,
-    private depenseService: DepenseService
+    private depenseService: DepenseService,
+    private caisseService: CaisseService,
+    private userService: UserService,
+    private toast: MatSnackBar
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.depenses = this.depenseService.newDepenses;
+  }
 
-  onNewDepense(type: string) {
-    this.depenseService.newDepense.type = type;
+  onNewDepense(
+    type:
+      | 'alimentaire'
+      | 'provision'
+      | 'culte'
+      | 'action'
+      | 'consultation'
+      | 'déplacement'
+      | 'extrat'
+  ) {
+    this.depenseService.newDepense = new DepenseItem('', type, '', 0);
 
     this.dialog.open(NewDepenseComponent, {
       width: '350px',
@@ -67,14 +57,34 @@ export class DepenserComponent implements OnInit {
 
     this.dialog.afterAllClosed.subscribe(() => {
       const _depense = this.depenseService.newDepense;
-      if (_depense.montant) {
+
+      if (_depense && _depense.montant && _depense.motif.length > 0) {
         this.depenses.push(_depense);
-        this.depenseService.dropNewDepense();
       }
+      this.depenseService.dropNewDepense();
     });
+    this.depenseService.newDepenses = this.depenses;
   }
 
   onDropDepense(index: number) {
     this.depenses.splice(index, 1);
+  }
+
+  onConfirm() {
+    const valid = this.caisseService.newDepense(
+      this.userService.currentUser.type,
+      this.depenses
+    );
+
+    if (valid) {
+      this.depenseService.confirmDepense(this.depenses);
+      this.depenses = [];
+      this.depenseService.newDepenses = this.depenses;
+    } else {
+      this.toast.open('Vous dépensez trop !', 'ok', {
+        duration: 5000,
+        panelClass: 'toast-warn',
+      });
+    }
   }
 }

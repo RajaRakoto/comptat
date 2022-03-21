@@ -2,16 +2,18 @@ import { DepenseItem } from './depense';
 
 export class DailyDepense {
   total = 0;
-  constructor(public expenses: DepenseItem[]) {}
+  constructor(public date: string, public depenses: DepenseItem[]) {
+    this.updateTotal();
+  }
 
   updateTotal() {
     let sum = 0;
-    this.expenses.forEach((e) => (sum += e.montant));
+    this.depenses.forEach((e) => (sum += e.montant));
     this.total = sum;
   }
 
-  insertSpent(newDepense: DepenseItem) {
-    this.expenses.push(newDepense);
+  insertDepense(newDepense: DepenseItem[]) {
+    this.depenses.push(...newDepense);
     this.updateTotal();
   }
 }

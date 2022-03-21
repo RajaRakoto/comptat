@@ -1,3 +1,4 @@
+import { DepenseItem } from './../class/depense';
 import { RevenuItem } from './../class/revenu';
 import { CAISS_DATA } from './../data/caisse.data';
 import { Injectable } from '@angular/core';
@@ -32,15 +33,27 @@ export class CaisseService {
     this.emitCaisseAssist();
   }
 
-  newDepense(userType: 'assist' | 'admin', depenses: RevenuItem[]) {
+  newDepense(userType: 'assist' | 'admin', depenses: DepenseItem[]) {
+    let valid = true;
     let sum = 0;
     depenses.forEach((d) => (sum += d.montant));
 
     if (userType === 'assist') {
-      if (this.caisse.assist >= sum) this.caisse.assist -= sum;
+      if (this.caisse.assist >= sum) {
+        this.caisse.assist -= sum;
+      } else {
+        valid = false;
+      }
     } else {
-      if (this.caisse.admin >= sum) this.caisse.admin -= sum;
+      if (this.caisse.admin >= sum) {
+        this.caisse.admin -= sum;
+      } else {
+        valid = false;
+      }
     }
-    this.emitCaisseAssist();
+    if (valid) {
+      this.emitCaisseAssist();
+    }
+    return valid;
   }
 }

@@ -1,4 +1,3 @@
-import { CaisseService } from './../../services/caisse.service';
 import { RevenuService } from './../../services/revenu.service';
 import { Component, OnInit } from '@angular/core';
 import { DailyRevenu } from 'src/app/class/dailyRevenu';
@@ -12,10 +11,7 @@ export class RevenuComponent implements OnInit {
   headers = ['heure', 'type', 'source', 'montant'];
   revenuToday!: DailyRevenu;
 
-  constructor(
-    private revenuService: RevenuService,
-    private caisseService: CaisseService
-  ) {}
+  constructor(private revenuService: RevenuService) {}
 
   ngOnInit(): void {
     this.revenuToday = this.revenuService.revenuToday;
