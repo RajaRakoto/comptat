@@ -51,6 +51,14 @@
     </h3>
     <h3
       class="menu-item"
+      [routerLink]="['revenu-mensuel']"
+      routerLinkActive="selected-menu-item"
+      *ngIf="userType === 'admin'"
+    >
+      Revenu mensuel
+    </h3>
+    <h3
+      class="menu-item"
       [routerLink]="['depense-mensuelle']"
       routerLinkActive="selected-menu-item"
       *ngIf="userType === 'admin'"

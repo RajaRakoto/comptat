@@ -1,3 +1,4 @@
+import { RevenuMensuelComponent } from './components/revenu-mensuel/revenu-mensuel.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AnalyseComponent } from './components/analyse/analyse.component';
@@ -59,6 +60,10 @@ const routes: Routes = [
       {
         path: 'depense-mensuelle',
         component: DepenseMensuelleComponent,
+      },
+      {
+        path: 'revenu-mensuel',
+        component: RevenuMensuelComponent,
       },
       {
         path: 'analyse',

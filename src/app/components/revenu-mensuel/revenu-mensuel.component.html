@@ -1,0 +1,32 @@
+<div class="container">
+  <section class="revenu-field">
+    <div class="revenu-item" *ngFor="let revenu of monthlyRevenu.revenus">
+      <div class="libelle">{{ revenu.libelle }} :</div>
+      <div class="montant">
+        {{ revenu.montant | currency: " ":"symbol":"1.0" }} Ar
+      </div>
+    </div>
+  </section>
+
+  <aside class="bilan-field">
+    <div class="date">{{ monthlyRevenu.date }}</div>
+    <div class="bilan-item">
+      <div class="bilan-libelle">Revenu :</div>
+      <div class="bilan-montant">
+        {{ monthlyRevenu.bilan.revenu | currency: " ":"symbol":"1.0" }} Ar
+      </div>
+    </div>
+    <div class="bilan-item">
+      <div class="bilan-libelle">Dépense :</div>
+      <div class="bilan-montant">
+        {{ monthlyRevenu.bilan.depense | currency: " ":"symbol":"1.0" }} Ar
+      </div>
+    </div>
+    <div class="bilan-item">
+      <div class="bilan-libelle">Gain :</div>
+      <div class="bilan-montant">
+        {{ monthlyRevenu.bilan.gain | currency: " ":"symbol":"1.0" }} Ar
+      </div>
+    </div>
+  </aside>
+</div>

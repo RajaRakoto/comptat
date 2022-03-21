@@ -20,6 +20,7 @@ import { CaisseComponent } from './dialog-box/caisse/caisse.component';
 import { LoginComponent } from './components/login/login.component';
 import { registerLocaleData } from '@angular/common';
 import * as fr from '@angular/common/locales/fr';
+import { RevenuMensuelComponent } from './components/revenu-mensuel/revenu-mensuel.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import * as fr from '@angular/common/locales/fr';
     NewCreditComponent,
     CaisseComponent,
     LoginComponent,
+    RevenuMensuelComponent,
   ],
   imports: [
     BrowserModule,

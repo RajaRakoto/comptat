@@ -30,7 +30,7 @@ mat-toolbar {
     @include animation-fade(in);
         
     .menu-item {
-      margin-top: 1rem;
+      margin-top: 0.8rem;
       font-family: Quicksand;
       font-weight: bolder;
       cursor: pointer;
@@ -45,8 +45,6 @@ mat-toolbar {
     }
 
     h1 {
-      padding-bottom: 5%;
-
       span {
         color: silver;
       }
