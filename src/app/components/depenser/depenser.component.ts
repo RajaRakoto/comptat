@@ -1,5 +1,5 @@
-import { DepenseService } from './../services/depense.service';
-import { NewDepenseComponent } from './../dialog-box/new-depense/new-depense.component';
+import { DepenseService } from 'src/app/services/depense.service';
+import { NewDepenseComponent } from 'src/app/dialog-box/new-depense/new-depense.component';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 

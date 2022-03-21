@@ -1,6 +1,6 @@
-import { NewCreditComponent } from './../dialog-box/new-credit/new-credit.component';
+import { NewCreditComponent } from '../../dialog-box/new-credit/new-credit.component';
 import { MatDialog } from '@angular/material/dialog';
-import { RevenuService } from './../services/revenu.service';
+import { RevenuService } from '../../services/revenu.service';
 import { Component, OnInit } from '@angular/core';
 
 export interface Revenu {

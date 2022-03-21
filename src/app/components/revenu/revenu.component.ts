@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { REVENU_DATA } from './revenu.service';
+import { REVENU_DATA } from '../../data/revenu.data';
 
 @Component({
   selector: 'app-revenu',
@@ -17,9 +17,9 @@ export class RevenuComponent implements OnInit {
     this.totalRevenu();
   }
 
-  totalRevenu(){
-     for(let i=0; i<this.revenus.length; i++){
-        this.footers[2] = +this.footers[2] + this.revenus[i].montant;
-      }
+  totalRevenu() {
+    for (let i = 0; i < this.revenus.length; i++) {
+      this.footers[2] = +this.footers[2] + this.revenus[i].montant;
     }
+  }
 }
