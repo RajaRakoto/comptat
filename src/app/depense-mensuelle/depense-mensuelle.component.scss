@@ -7,7 +7,7 @@
     @include animation-zoom(in);
 
     section.depense-field {
-        border: 2px dashed green;
+        _border: 2px dashed green;
         flex: 2;
         display: flex;
         flex-direction: column;
@@ -15,7 +15,7 @@
         
         .depense-item {
             display: flex;
-            margin-top: 1.2rem;
+            margin-bottom: 1.2rem;
 
             .libelle {
                 _border: 1px dashed magenta;
@@ -41,13 +41,14 @@
             margin-top: 2rem;
             padding: 0.1rem 2.5rem;
             border-radius: 1.2rem;
+            background-color: dodgerblue;
         }
     }
 
     aside.bilan-field {
         flex: 1;
-        border: 2px dashed darkmagenta;
-        padding-top: 1.2rem;
+        _border: 2px dashed darkmagenta;
+        border-left: 1px solid silver;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -55,7 +56,6 @@
         .date {
             color: dodgerblue;
             font-style: italic;
-            text-decoration: underline;
             width: 100%;
             text-align: center;
         }

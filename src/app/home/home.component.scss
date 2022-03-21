@@ -19,10 +19,9 @@ mat-toolbar {
   //sidebar
   .menu {
     flex-direction: column;
-    padding-left: 70px;
-    padding-right: 70px;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding: 0 2rem;
+    padding-top: 3%;
+    padding-bottom: 3%;
     display: flex;
     height: 100%;
     background-color: #333;
@@ -30,28 +29,9 @@ mat-toolbar {
 
     @include effect-shadow-box-inset(medium);
     @include animation-fade(in);
-
-    img {
-      @include image-responsive();
-      width: 150px;
-      height: 100px;
-      // @include position-block-center();
-    }
-
-    .menu-header {
-      margin-top: 0%;
-      margin-bottom: 50%;
-      text-align: center;
-      transition: 0.5s;
-
-      &:hover {
-        @include effect-light(medium);
-        cursor: pointer;
-      }
-    }
-
+        
     .menu-item {
-      margin-top: 1.3rem;
+      margin-top: 1rem;
       font-family: Quicksand;
       font-weight: bolder;
       cursor: pointer;
@@ -77,13 +57,29 @@ mat-toolbar {
       }
     }
 
+<<<<<<< HEAD
     #app-version {
       margin-top: 80%;
       font-size: small;
       text-align: center;
+=======
+    h1 {
+      padding-bottom: 5%;
+
+      span {
+        color: silver;
+      }
+>>>>>>> origin/brillant
     }
   }
 
+        .caisse {
+            cursor: pointer;
+
+            span {
+                color: goldenrod;
+            }
+        }
   .main {
     flex: 1;
     height: 100%;

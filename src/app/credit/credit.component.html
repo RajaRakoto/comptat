@@ -1,1 +1,31 @@
-<p>credit works!</p>
+<div class="container">
+  <section class="revenu-field">
+    <div class="revenu-item" *ngFor="let revenu of revenus; let i = index">
+      <mat-icon class="mat-18" color="warn" (click)="onDropRevenu(i)"
+        >cancel</mat-icon
+      >
+      <div class="revenu-type">{{ revenu.type }} :</div>
+      <div class="revenu-source">
+        {{ revenu.source }}
+      </div>
+      <div class="revenu-montant">
+        {{ revenu.montant | currency: " ":"symbol":"1.0" }} Ar
+      </div>
+    </div>
+
+    <button mat-raised-button (click)="(null)">Valider</button>
+  </section>
+
+  <aside class="type-field">
+    <div
+      class="revenu-type"
+      *ngFor="let type of types"
+      (click)="onNewRevenu(type)"
+    >
+      <mat-icon class="mat-18">queue</mat-icon>
+      <div class="revenu-type-libelle">
+        {{ type }}
+      </div>
+    </div>
+  </aside>
+</div>

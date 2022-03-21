@@ -2,8 +2,12 @@
 @import "./imports/typography";
 
 //global
-html {
+html, .container {
   background-color: #444;
+}
+
+mat-icon {
+    cursor: pointer;
 }
 
 * {
@@ -13,6 +17,27 @@ html {
   font-size: medium;
   font-family: Quicksand;
 }
+
+button {
+  * {
+    color: white !important;
+    font-weight: bolder !important;
+  }
+}
+
+input {
+  color: #444;
+  font-weight: bold;
+}
+
+.dialog-box {
+  mat-dialog-container {
+    border-radius: 10px;
+    background-color: #444
+  }
+}
+
+
 
 // Normalize permet aux navigateurs de rendre tous les éléments de manière plus cohérente et conforme aux normes modernes
 @include normalize();

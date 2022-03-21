@@ -1,63 +1,63 @@
 <div class="container">
   <nav class="menu">
-    <!-- <img src="test" alt="official-logo" /> -->
-
-    <h1 class="menu-header" [routerLink]="['./']">
-      Comptat <span style="color: gold">App</span>
+    <h1>
+      Comptat App
+      <br />
+      <span>v1.0.0</span>
     </h1>
 
     <h3
       class="menu-item"
-      [routerLink]="['/revenu']"
+      [routerLink]="['revenu']"
       routerLinkActive="selected-menu-item"
     >
       Revenu
     </h3>
     <h3
       class="menu-item"
-      [routerLink]="['/depense']"
+      [routerLink]="['depense']"
       routerLinkActive="selected-menu-item"
     >
       Dépense
     </h3>
     <h3
       class="menu-item"
-      [routerLink]="['/credit']"
+      [routerLink]="['credit']"
       routerLinkActive="selected-menu-item"
     >
       Crédit
     </h3>
     <h3
       class="menu-item"
-      [routerLink]="['/depenser']"
+      [routerLink]="['depenser']"
       routerLinkActive="selected-menu-item"
     >
       Dépenser
     </h3>
     <h3
       class="menu-item"
-      [routerLink]="['/revenu-archive']"
+      [routerLink]="['revenu-archive']"
       routerLinkActive="selected-menu-item"
     >
       Revenu archivé
     </h3>
     <h3
       class="menu-item"
-      [routerLink]="['/depense-archive']"
+      [routerLink]="['depense-archive']"
       routerLinkActive="selected-menu-item"
     >
       Dépense archivé
     </h3>
     <h3
       class="menu-item"
-      [routerLink]="['/depense-mensuelle']"
+      [routerLink]="['depense-mensuelle']"
       routerLinkActive="selected-menu-item"
     >
       Dépense mensuelle
     </h3>
     <h3
       class="menu-item"
-      [routerLink]="['/analyse']"
+      [routerLink]="['analyse']"
       routerLinkActive="selected-menu-item"
     >
       Analyse
@@ -67,14 +67,12 @@
 
   <div class="main">
     <mat-toolbar>
-      <div class="toolbar-items">
-        <span class="items"
-          ><strong>💰 Caisse : </strong>
-          <span style="color: gold">379.500 Ar</span></span
-        >
-        <span class="items">🗓 Mardi 17 Mars 2022</span>
-        <!-- <mat-icon class="mat-18">person</mat-icon> -->
-        <span class="items"><strong>👤 Admin</strong></span>
+      <div class="caisse" (click)="onCaisse()">
+        <strong>💰 Caisse : </strong> <span>379.500 Ar</span>
+      </div>
+      <div class="date">🗓 Mardi 17 Mars 2022</div>
+      <div class="user">
+        <strong>👤 Admin</strong>
       </div>
     </mat-toolbar>
 

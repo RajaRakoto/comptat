@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="title">
+    <h1>
+      {{ revenu.type }}
+    </h1>
+  </div>
+  <form>
+    <div class="item source">
+      <p>Motif</p>
+      <input type="text" id="source" #source />
+    </div>
+
+    <div class="item montant">
+      <p>Montant</p>
+      <input type="number" id="montant" #montant />
+    </div>
+
+    <button
+      mat-raised-button
+      type="button"
+      (click)="onSubmit(source.value, +montant.value)"
+    >
+      Confirmer
+    </button>
+  </form>
+</div>
