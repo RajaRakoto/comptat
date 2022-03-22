@@ -1,77 +1,108 @@
 <div class="container">
-  <nav class="menu">
-    <h1>
-      Comptat App
-      <br />
-      <span>v0.0.0</span>
-    </h1>
+  <nav id="menu" [ngClass]="hambergerStatus ? 'menu-disable' : 'menu-active'">
+    <!-- <button
+      class="hamburger hamburger--arrow"
+      type="button"
+      (click)="hamburgerClickEvent()"
+      [ngClass]="hambergerStatus ? 'is-disable' : 'is-active'"
+    >
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button> -->
+
+    <div id="logo" [routerLink]="['./']">
+      <img src="../../assets/img/comptat-logo.svg" alt="official-logo" />
+      <h1 class="logo--text">Comptat <span style="color: gold">App</span></h1>
+    </div>
+
     <h3
       class="menu-item"
-      [routerLink]="['/revenu']"
+      [routerLink]="['revenu']"
       routerLinkActive="selected-menu-item"
     >
       Revenu
     </h3>
     <h3
       class="menu-item"
-      [routerLink]="['/depense']"
+      [routerLink]="['depense']"
       routerLinkActive="selected-menu-item"
     >
       Dépense
     </h3>
     <h3
       class="menu-item"
-      [routerLink]="['/credit']"
+      [routerLink]="['credit']"
       routerLinkActive="selected-menu-item"
     >
       Crédit
     </h3>
     <h3
       class="menu-item"
-      [routerLink]="['/depenser']"
+      [routerLink]="['depenser']"
       routerLinkActive="selected-menu-item"
     >
       Dépenser
     </h3>
     <h3
       class="menu-item"
-      [routerLink]="['/revenu-archive']"
+      [routerLink]="['revenu-archive']"
       routerLinkActive="selected-menu-item"
+      *ngIf="userType === 'admin'"
     >
       Revenu archivé
     </h3>
     <h3
       class="menu-item"
-      [routerLink]="['/depense-archive']"
+      [routerLink]="['depense-archive']"
       routerLinkActive="selected-menu-item"
+      *ngIf="userType === 'admin'"
     >
       Dépense archivé
     </h3>
     <h3
       class="menu-item"
-      [routerLink]="['/depense-mensuelle']"
+      [routerLink]="['revenu-mensuel']"
       routerLinkActive="selected-menu-item"
+      *ngIf="userType === 'admin'"
+    >
+      Revenu mensuel
+    </h3>
+    <h3
+      class="menu-item"
+      [routerLink]="['depense-mensuelle']"
+      routerLinkActive="selected-menu-item"
+      *ngIf="userType === 'admin'"
     >
       Dépense mensuelle
     </h3>
     <h3
       class="menu-item"
-      [routerLink]="['/analyse']"
+      [routerLink]="['analyse']"
       routerLinkActive="selected-menu-item"
+      *ngIf="userType === 'admin'"
     >
       Analyse
     </h3>
+    <span id="app-version">v1.0.0</span>
   </nav>
 
-  <div class="main">
+  <div id="main">
     <mat-toolbar>
-      <div class="caisse">
-        <strong>💰 Caisse : </strong> <span>379.500 Ar</span>
-      </div>
-      <div class="date">🗓 Mardi 17 Mars 2022</div>
-      <div class="user">
-        <mat-icon class="mat-18">person</mat-icon>
-        <strong>Admin</strong>
+      <div class="toolbar-items">
+        <div class="caisse items" (click)="onCaisse()">
+          <button class="caisse-btn">
+            💰 Caisse :
+            <span>{{ caisse | currency: " ":"symbol":"1.0" }} Ar</span>
+          </button>
+        </div>
+        <div class="date items">🗓 {{ today | date: "EEEE dd MMMM YYYY" }}</div>
+        <div class="user items">
+          <strong>👤 {{ userType }}</strong>
+        </div>
+        <div class="lougout items" (click)="onLogout()">
+          <button class="logout-btn">⏻ Logout</button>
+        </div>
       </div>
     </mat-toolbar>
 

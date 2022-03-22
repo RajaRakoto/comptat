@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="title">
+    <h1>Caisse</h1>
+  </div>
+
+  <section class="caisse-field">
+    <div class="caisse today">
+      <h3>Aujourd’hui</h3>
+      <p>{{ caisse.today | currency: " ":"symbol":"1.0" }} Ar</p>
+    </div>
+
+    <div class="caisse assist">
+      <h3>Assistant(e)</h3>
+      <p>{{ caisse.assist | currency: " ":"symbol":"1.0" }} Ar</p>
+    </div>
+
+    <div class="caisse admin">
+      <h3>Admin</h3>
+      <p>{{ caisse.admin | currency: " ":"symbol":"1.0" }} Ar</p>
+    </div>
+  </section>
+
+  <nav>
+    <input type="number" #versement />
+    <button mat-raised-button (click)="onSubmit(+versement.value)">
+      Verser
+    </button>
+  </nav>
+</div>

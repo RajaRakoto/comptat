@@ -1,0 +1,33 @@
+<div class="container">
+  <table>
+    <thead>
+      <th
+        *ngFor="let header of headers"
+        class="column-{{ header.toLowerCase() }}"
+      >
+        {{ header }}
+      </th>
+    </thead>
+    <tr *ngFor="let depense of dailyDepense.depenses">
+      <td class="column-heure" *ngIf="depense.date.length === 5">
+        {{ depense.date }}
+      </td>
+      <td class="column-heure" *ngIf="depense.date.length !== 5">
+        {{ depense.date | date: "HH:mm" }}
+      </td>
+
+      <td class="column-type">{{ depense.type }}</td>
+      <td class="column-motif">{{ depense.motif }}</td>
+      <td class="column-montant">
+        {{ depense.montant | currency: " ":"symbol":"1.0" }} Ar
+      </td>
+    </tr>
+    <tfoot>
+      <td class="column-heure">24 h</td>
+      <td class="column-type-motif" colspan="2">Total</td>
+      <td class="column-montant">
+        {{ dailyDepense.total | currency: " ":"symbol":"1.0" }} Ar
+      </td>
+    </tfoot>
+  </table>
+</div>

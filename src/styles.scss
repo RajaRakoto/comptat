@@ -2,8 +2,12 @@
 @import "./imports/typography";
 
 //global
-html {
+html, .container {
   background-color: #444;
+}
+
+mat-icon {
+    cursor: pointer;
 }
 
 * {
@@ -14,5 +18,55 @@ html {
   font-family: Quicksand;
 }
 
+button {
+  * {
+    color: white !important;
+    font-weight: bolder !important;
+  }
+}
+
+input {
+  color: #444;
+  font-weight: bold;
+}
+
+.dialog-box {
+  mat-dialog-container {
+    border-radius: 10px;
+    background-color: #444
+  }
+}
+
+.toast-warn {
+  * {
+    color: deeppink !important;
+    font-weight: bold !important;
+  }
+
+  button {
+    * {
+      color: dodgerblue !important;
+    }
+  }
+}
+
+.toast-success {
+  * {
+    color: limegreen !important;
+    font-weight: bold !important;
+  }
+
+  button {
+    * {
+      color: dodgerblue !important;
+    }
+  }
+}
+
+
+
 // Normalize permet aux navigateurs de rendre tous les éléments de manière plus cohérente et conforme aux normes modernes
 @include normalize();
+
+// Personnalisation du scrolling bar
+@include bar-scrolling(rgb(206, 164, 59), rgb(155, 118, 49), #333);
