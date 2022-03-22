@@ -1,6 +1,19 @@
 <div class="container">
-  <nav class="menu">
-    <div class="logo" [routerLink]="['./']">
+  <nav id="menu">
+    <div id="humburger-container">
+      <button
+        class="hamburger hamburger--slider"
+        type="button"
+        (click)="humburgerClickEvent()"
+        [ngClass]="humbergerStatus ? 'is-active' : 'is-disable'"
+      >
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+    </div>
+
+    <div id="logo" [routerLink]="['./']">
       <img src="../../assets/img/comptat-logo.svg" alt="official-logo" />
       <h1 class="logo--text">Comptat <span style="color: gold">App</span></h1>
     </div>
@@ -76,7 +89,7 @@
     <span id="app-version">v1.0.0</span>
   </nav>
 
-  <div class="main">
+  <div id="main">
     <mat-toolbar>
       <div class="toolbar-items">
         <div class="caisse items" (click)="onCaisse()">
