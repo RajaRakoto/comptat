@@ -1,20 +1,22 @@
-import { LoginComponent } from './login/login.component';
+import { RevenuMensuelComponent } from './components/revenu-mensuel/revenu-mensuel.component';
+import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './home/home.component';
-import { AnalyseComponent } from './analyse/analyse.component';
-import { DepenseMensuelleComponent } from './depense-mensuelle/depense-mensuelle.component';
-import { DepenseArchiveComponent } from './depense-archive/depense-archive.component';
-import { RevenuArchiveComponent } from './revenu-archive/revenu-archive.component';
-import { DepenserComponent } from './depenser/depenser.component';
-import { CreditComponent } from './credit/credit.component';
-import { DepenseComponent } from './depense/depense.component';
-import { RevenuComponent } from './revenu/revenu.component';
+import { AnalyseComponent } from './components/analyse/analyse.component';
+import { DepenseMensuelleComponent } from './components/depense-mensuelle/depense-mensuelle.component';
+import { DepenseArchiveComponent } from './components/depense-archive/depense-archive.component';
+import { RevenuArchiveComponent } from './components/revenu-archive/revenu-archive.component';
+import { DepenserComponent } from './components/depenser/depenser.component';
+import { CreditComponent } from './components/credit/credit.component';
+import { DepenseComponent } from './components/depense/depense.component';
+import { RevenuComponent } from './components/revenu/revenu.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'home',
     pathMatch: 'full',
   },
   {
@@ -23,6 +25,7 @@ const routes: Routes = [
   },
   {
     path: 'home',
+    canActivate: [AuthGuard],
     component: HomeComponent,
     children: [
       {
@@ -57,6 +60,10 @@ const routes: Routes = [
       {
         path: 'depense-mensuelle',
         component: DepenseMensuelleComponent,
+      },
+      {
+        path: 'revenu-mensuel',
+        component: RevenuMensuelComponent,
       },
       {
         path: 'analyse',

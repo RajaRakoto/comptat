@@ -1,13 +1,7 @@
 import { RevenuService } from './../../services/revenu.service';
 import { MatDialog } from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
-
-export interface Revenu {
-  type: string;
-  heure: string;
-  source: string;
-  montant: number;
-}
+import { RevenuItem } from 'src/app/class/revenu';
 
 @Component({
   selector: 'app-new-credit',
@@ -15,12 +9,7 @@ export interface Revenu {
   styleUrls: ['./new-credit.component.scss'],
 })
 export class NewCreditComponent implements OnInit {
-  revenu: Revenu = {
-    type: '',
-    heure: '',
-    source: '',
-    montant: 0,
-  };
+  revenu!: RevenuItem;
 
   constructor(
     private dialog: MatDialog,
@@ -28,13 +17,15 @@ export class NewCreditComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.revenu = this.revenuService.newRevenu;
+    if (this.revenuService.newRevenu) {
+      this.revenu = this.revenuService.newRevenu;
+    }
   }
 
   onSubmit(source: string, montant: number) {
     this.revenu.source = source.trim();
     this.revenu.montant = montant;
-    this.revenu.heure = `${new Date()}`;
+    this.revenu.date = `${new Date()}`;
 
     this.revenuService.newRevenu = this.revenu;
     this.dialog.closeAll();

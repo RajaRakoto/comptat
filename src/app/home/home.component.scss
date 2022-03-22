@@ -31,7 +31,7 @@ mat-toolbar {
     @include animation-fade(in);
         
     .menu-item {
-      margin-top: 1rem;
+      margin-top: 0.8rem;
       font-family: Quicksand;
       font-weight: bolder;
       cursor: pointer;
@@ -63,8 +63,6 @@ mat-toolbar {
     //   text-align: center;
 
     h1 {
-      padding-bottom: 5%;
-
       span {
         color: silver;
       }
@@ -97,14 +95,30 @@ mat-toolbar {
     @include animation-slide(in, down);
     @include effect-shadow-box(solid);
 
-    .toolbar-items {
-      @include position-flex-center;
-      padding: 20px;
+    // .toolbar-items {
+    //   @include position-flex-center;
+    //   padding: 20px;
+
+    .caisse {
+      span {
+        color: goldenrod;
+      }
+    }
+
+    .user {
+      display: flex;
+      align-items: center;
+      text-transform: capitalize;
+      cursor: pointer;
 
       .items {
         margin-left: 10%;
         margin-right: 10%;
       }
+    }
+
+    .date {
+      text-transform: capitalize;
     }
   }
 

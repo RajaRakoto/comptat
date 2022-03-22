@@ -1,5 +1,6 @@
+import { RevenuService } from './../../services/revenu.service';
 import { Component, OnInit } from '@angular/core';
-import { REVENU_DATA } from './revenu.service';
+import { DailyRevenu } from 'src/app/class/dailyRevenu';
 
 @Component({
   selector: 'app-revenu',
@@ -8,18 +9,11 @@ import { REVENU_DATA } from './revenu.service';
 })
 export class RevenuComponent implements OnInit {
   headers = ['heure', 'type', 'source', 'montant'];
-  footers = ['24 h', 'Total', 0];
-  revenus = REVENU_DATA;
+  revenuToday!: DailyRevenu;
 
-  constructor() {}
+  constructor(private revenuService: RevenuService) {}
 
   ngOnInit(): void {
-    this.totalRevenu();
+    this.revenuToday = this.revenuService.revenuToday;
   }
-
-  totalRevenu(){
-     for(let i=0; i<this.revenus.length; i++){
-        this.footers[2] = +this.footers[2] + this.revenus[i].montant;
-      }
-    }
 }

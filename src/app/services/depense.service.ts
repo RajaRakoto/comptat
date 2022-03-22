@@ -1,31 +1,26 @@
+import { DepenseItem } from './../class/depense';
 import { Injectable } from '@angular/core';
-
-export interface Depense {
-  type: string;
-  heure: string;
-  motif: string;
-  montant: number;
-}
+import { DailyDepense } from '../class/dailyDepense';
+import { DEPENSE_DATA, NEW_DEPENSES_DATA } from '../data/depense.data';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DepenseService {
-  newDepense: Depense = {
-    heure: '',
-    montant: 0,
-    motif: '',
-    type: '',
-  };
+  depenseToday: DailyDepense;
+  newDepense?: DepenseItem;
+  newDepenses: DepenseItem[] = [];
 
-  constructor() {}
+  constructor() {
+    this.depenseToday = new DailyDepense(`${new Date()}`, DEPENSE_DATA);
+    this.newDepenses = NEW_DEPENSES_DATA;
+  }
 
   dropNewDepense() {
-    this.newDepense = {
-      heure: '',
-      montant: 0,
-      motif: '',
-      type: '',
-    };
+    this.newDepense = undefined;
+  }
+
+  confirmDepense(depenses: DepenseItem[]) {
+    this.depenseToday.insertDepense(depenses);
   }
 }
