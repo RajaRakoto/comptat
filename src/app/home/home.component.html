@@ -85,8 +85,11 @@
           <span>{{ caisse | currency: " ":"symbol":"1.0" }} Ar</span>
         </div>
         <div class="date items">🗓 {{ today | date: "EEEE dd MMMM YYYY" }}</div>
-        <div class="user items" (click)="onLogout()">
+        <div class="user items">
           <strong>👤 {{ userType }}</strong>
+        </div>
+        <div class="lougout items" (click)="onLogout()">
+          <button class="logout-btn">⏻ Logout</button>
         </div>
       </div>
     </mat-toolbar>
