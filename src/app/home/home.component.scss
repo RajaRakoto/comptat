@@ -24,7 +24,7 @@ mat-toolbar {
     background-color: #333;
     z-index: 1;
     @include effect-shadow-box(medium);
-    @include animation-fade(in);
+    @include animation-slide(in, left);
 
     .logo {
       height: 115px;
@@ -57,6 +57,8 @@ mat-toolbar {
       cursor: pointer;
       transition: 0.5s;
       text-align: center;
+      animation-duration: 1.7s;
+      @include animation-scale(left);
 
       &:hover {
         @include animation-pulse();
@@ -111,8 +113,8 @@ mat-toolbar {
     @include effect-shadow-box(solid);
 
     .toolbar-items {
-      @include position-flex-center;
       padding: 20px;
+      @include position-flex-center;
 
       .items {
         margin-left: 10%;
