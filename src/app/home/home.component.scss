@@ -9,7 +9,7 @@
 .container {
   display: flex;
 
-  .menu {
+  #menu {
     flex-direction: column;
     padding: 0 5rem;
     padding-top: 3%;
@@ -22,7 +22,7 @@
     @include effect-shadow-box(medium);
     @include animation-slide(in, left);
 
-    .logo {
+    #logo {
       height: 115px;
       margin-bottom: 40%;
 
@@ -80,7 +80,7 @@
     }
   }
 
-  .main {
+  #main {
     flex: 1;
     height: 100%;
     display: flex;
@@ -94,7 +94,7 @@
     padding-left: 20%;
     padding-right: 20%;
     border-radius: 10px;
-    min-width: 740px;
+    min-width: 800px;
     background-color: #333;
     @include position-block-center;
     @include animation-slide(in, down);
