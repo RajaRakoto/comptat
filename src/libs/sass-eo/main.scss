@@ -1,8 +1,2 @@
-@import './ALL-IMPORT';
+@charset "UTF-8";
 
-section {
-	@include box-generator(color-adjust(gray, 20%), 500px);
-	@include effect-shadow-box(small);
-}
-
-@include grid-milligram();
