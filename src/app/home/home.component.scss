@@ -16,22 +16,39 @@ mat-toolbar {
   display: flex;
   overflow: scroll;
 
-  //sidebar
   .menu {
     flex-direction: column;
-    padding: 0 2rem;
+    padding: 0 5rem;
     padding-top: 3%;
     padding-bottom: 3%;
     display: flex;
     height: 100%;
     background-color: #333;
     z-index: 1;
-
-    @include effect-shadow-box-inset(medium);
+    @include effect-shadow-box(medium);
     @include animation-fade(in);
-        
+
+    img {
+      @include image-responsive();
+      width: 150px;
+      height: 100px;
+      // @include position-block-center();
+    }
+
+    .menu-header {
+      margin-top: 0%;
+      margin-bottom: 50%;
+      text-align: center;
+      transition: 0.5s;
+
+      &:hover {
+        @include effect-light(medium);
+        cursor: pointer;
+      }
+    }
+
     .menu-item {
-      margin-top: 0.8rem;
+      margin-top: 1.3rem;
       font-family: Quicksand;
       font-weight: bolder;
       cursor: pointer;
@@ -57,25 +74,20 @@ mat-toolbar {
       }
     }
 
-    // #app-version {
-    //   margin-top: 80%;
-    //   font-size: small;
-    //   text-align: center;
-
-    h1 {
-      span {
-        color: silver;
-      }
+    #app-version {
+      margin-top: 50%;
+      font-size: small;
+      text-align: center;
     }
   }
 
-        .caisse {
-            cursor: pointer;
+  .caisse {
+    cursor: pointer;
+    span {
+      color: goldenrod;
+    }
+  }
 
-            span {
-                color: goldenrod;
-            }
-        }
   .main {
     flex: 1;
     height: 100%;
@@ -95,9 +107,15 @@ mat-toolbar {
     @include animation-slide(in, down);
     @include effect-shadow-box(solid);
 
-    // .toolbar-items {
-    //   @include position-flex-center;
-    //   padding: 20px;
+    .toolbar-items {
+      @include position-flex-center;
+      padding: 20px;
+
+      .items {
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+    }
 
     .caisse {
       span {
@@ -111,9 +129,9 @@ mat-toolbar {
       text-transform: capitalize;
       cursor: pointer;
 
-      .items {
-        margin-left: 10%;
-        margin-right: 10%;
+      mat-icon {
+        transform: scale(1.5);
+        margin-right: 0.8rem;
       }
     }
 

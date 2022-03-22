@@ -1,9 +1,9 @@
 <div class="container">
   <nav class="menu">
-    <h1>
-      Comptat App
-      <br />
-      <span>v1.0.0</span>
+    <!-- <img src="test" alt="official-logo" /> -->
+
+    <h1 class="menu-header" [routerLink]="['./']">
+      Comptat <span style="color: gold">App</span>
     </h1>
 
     <h3
@@ -78,16 +78,18 @@
   </nav>
 
   <div class="main">
-    <!-- <mat-toolbar>
-      <div class="caisse" (click)="onCaisse()">
-        <strong>💰 Caisse : </strong>
-        <span>{{ caisse | currency: " ":"symbol":"1.0" }} Ar</span>
+    <mat-toolbar>
+      <div class="toolbar-items">
+        <div class="caisse items" (click)="onCaisse()">
+          <strong>💰 Caisse : </strong>
+          <span>{{ caisse | currency: " ":"symbol":"1.0" }} Ar</span>
+        </div>
+        <div class="date items">🗓 {{ today | date: "EEEE dd MMMM YYYY" }}</div>
+        <div class="user items" (click)="onLogout()">
+          <strong>👤 {{ userType }}</strong>
+        </div>
       </div>
-      <div class="date">🗓 {{ today | date: "EEEE dd MMMM YYYY" }}</div>
-      <div class="user" (click)="onLogout()">
-        <strong>👤 {{ userType }}</strong>
-      </div>
-    </mat-toolbar> -->
+    </mat-toolbar>
 
     <section>
       <router-outlet></router-outlet>
