@@ -26,18 +26,23 @@ mat-toolbar {
     @include effect-shadow-box(medium);
     @include animation-fade(in);
 
-    img {
-      width: 80px;
-      height: 70px;
-      @include image-responsive();
-      @include position-block-center();
-    }
+    .logo {
+      height: 115px;
+      margin-bottom: 40%;
+      // @include box-debug(red);
 
-    .menu-header {
-      margin-top: 0%;
-      margin-bottom: 50%;
-      text-align: center;
-      transition: 0.5s;
+      img {
+        width: 80px;
+        @include image-responsive();
+        @include position-block-center();
+      }
+
+      &--text {
+        margin-top: 0%;
+        margin-bottom: 50%;
+        text-align: center;
+        transition: 0.5s;
+      }
 
       &:hover {
         @include effect-light(medium);
@@ -55,7 +60,7 @@ mat-toolbar {
 
       &:hover {
         @include animation-pulse();
-        @include effect-light(large, rgb(245, 196, 72));
+        @include effect-light(large);
       }
     }
 
@@ -140,8 +145,11 @@ mat-toolbar {
       background-color: #333;
       color: rgb(214, 106, 66);
       font-weight: bolder;
+      border: none;
       border-radius: 7px;
       margin-left: 70px;
+      padding: 5px 10px 5px 10px;
+      transition: 0.3s;
 
       &:hover {
         cursor: pointer;
