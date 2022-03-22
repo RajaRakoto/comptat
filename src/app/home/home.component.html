@@ -1,11 +1,8 @@
 <div class="container">
   <nav class="menu">
-    
     <div class="logo" [routerLink]="['./']">
       <img src="../../assets/img/comptat-logo.svg" alt="official-logo" />
-      <h1 class="logo--text">
-        Comptat <span style="color: gold">App</span>
-      </h1>
+      <h1 class="logo--text">Comptat <span style="color: gold">App</span></h1>
     </div>
 
     <h3
@@ -83,8 +80,10 @@
     <mat-toolbar>
       <div class="toolbar-items">
         <div class="caisse items" (click)="onCaisse()">
-          <strong>💰 Caisse : </strong>
-          <span>{{ caisse | currency: " ":"symbol":"1.0" }} Ar</span>
+          <button class="caisse-btn">
+            💰 Caisse :
+            <span>{{ caisse | currency: " ":"symbol":"1.0" }} Ar</span>
+          </button>
         </div>
         <div class="date items">🗓 {{ today | date: "EEEE dd MMMM YYYY" }}</div>
         <div class="user items">

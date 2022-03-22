@@ -1,10 +1,6 @@
 @import "../../imports/typography";
 @import "../../libs/sass-eo/ALL-IMPORT";
 
-mat-toolbar {
-  background-color: #333;
-}
-
 @mixin border-style() {
   border: 2px solid gray;
   border-radius: 5px;
@@ -19,6 +15,7 @@ mat-toolbar {
     padding: 0 5rem;
     padding-top: 3%;
     padding-bottom: 3%;
+    margin-right: 20px;
     display: flex;
     height: auto;
     background-color: #333;
@@ -57,11 +54,10 @@ mat-toolbar {
       cursor: pointer;
       transition: 0.5s;
       text-align: center;
-      animation-duration: 1.7s;
       @include animation-scale(left);
+      animation-delay: 0.3s;
 
       &:hover {
-        @include animation-pulse();
         @include effect-light(large);
       }
     }
@@ -86,13 +82,6 @@ mat-toolbar {
     }
   }
 
-  .caisse {
-    cursor: pointer;
-    span {
-      color: goldenrod;
-    }
-  }
-
   .main {
     flex: 1;
     height: 100%;
@@ -107,10 +96,12 @@ mat-toolbar {
     padding-left: 20%;
     padding-right: 20%;
     border-radius: 10px;
-    min-width: 500px;
+    min-width: 740px;
+    background-color: #333;
     @include position-block-center;
     @include animation-slide(in, down);
     @include effect-shadow-box(solid);
+    transition: 0.3s;
 
     .toolbar-items {
       padding: 20px;
@@ -123,6 +114,22 @@ mat-toolbar {
     }
 
     .caisse {
+      &-btn {
+        background-color: #333;
+        color: goldenrod;
+        font-weight: bolder;
+        border: none;
+        border-radius: 7px;
+        margin-right: 70px;
+        padding: 5px 10px 5px 10px;
+        transition: 0.3s;
+
+        &:hover {
+          cursor: pointer;
+          background-color: goldenrod;
+          color: #eee;
+        }
+      }
       span {
         color: goldenrod;
       }
@@ -168,4 +175,40 @@ mat-toolbar {
     overflow-y: auto;
     padding: 5%;
   }
+
+  //[media-queries(begin)]===========================================
+
+  @mixin mat-toolbar-media(
+    $tbar-width,
+    $mg-right-caisse,
+    $mg-left-lgout: $mg-right-caisse
+  ) {
+    mat-toolbar {
+      width: $tbar-width;
+
+      .caisse {
+        &-btn {
+          margin-right: $mg-right-caisse;
+        }
+      }
+
+      .logout-btn {
+        margin-left: $mg-left-lgout;
+      }
+    }
+  }
+
+  @media (max-width: 1670px) {
+    @include mat-toolbar-media(70%, 2px, 2px);
+  }
+
+  @media (max-width: 1115px) {
+    mat-toolbar {
+      .date {
+        display: none;
+      }
+    }
+  }
+
+  //[media-queries(end)]=============================================
 }
