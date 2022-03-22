@@ -47,4 +47,9 @@ export class HomeComponent implements OnInit {
     this.userService.logout();
     this.router.navigate(['/login']);
   }
+
+  hambergerStatus: boolean = false;
+  hamburgerClickEvent() {
+    this. hambergerStatus = !this. hambergerStatus;
+  }
 }

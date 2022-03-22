@@ -7,20 +7,30 @@
 }
 
 .container {
-  display: flex;
-
+  display: flex; //don't delete
   #menu {
+    position: relative;
     flex-direction: column;
     padding: 0 5rem;
-    padding-top: 3%;
+    padding-right: 5%;
     padding-bottom: 3%;
+    padding-top: 7%;
     margin-right: 20px;
     display: flex;
     height: auto;
+    min-width: 270px;
     background-color: #333;
     z-index: 1;
     @include effect-shadow-box(medium);
     @include animation-slide(in, left);
+
+    .hamburger {
+      position: absolute;
+      width: 30%;
+      right: 7px;
+      top: 22px;
+      @include box-debug(red);
+    }
 
     #logo {
       height: 115px;
