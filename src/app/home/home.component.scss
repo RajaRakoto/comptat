@@ -11,8 +11,6 @@ mat-toolbar {
 }
 
 .container {
-  width: 100vw;
-  height: 100vh;
   display: flex;
   overflow: scroll;
 
@@ -29,10 +27,10 @@ mat-toolbar {
     @include animation-fade(in);
 
     img {
+      width: 80px;
+      height: 70px;
       @include image-responsive();
-      width: 150px;
-      height: 100px;
-      // @include position-block-center();
+      @include position-block-center();
     }
 
     .menu-header {
@@ -57,7 +55,7 @@ mat-toolbar {
 
       &:hover {
         @include animation-pulse();
-        @include effect-light(large);
+        @include effect-light(large, rgb(245, 196, 72));
       }
     }
 
