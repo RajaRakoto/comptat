@@ -1,0 +1,232 @@
+@import "../../imports/typography";
+@import "../../libs/sass-eo/ALL-IMPORT";
+
+@mixin border-style() {
+  border: 2px solid gray;
+  border-radius: 5px;
+}
+
+.container {
+  display: flex; //don't delete
+
+  #menu {
+    position: relative;
+    flex-direction: column;
+    padding: 0 5rem;
+    padding-bottom: 3%;
+    padding-top: 2%;
+    margin-right: 20px;
+    display: flex;
+    height: auto;
+    min-width: 270px;
+    background-color: #333;
+    z-index: 1;
+    @include effect-shadow-box(medium);
+    @include animation-slide(in, left);
+
+    .hamburger {
+      position: absolute;
+      width: 30%;
+      right: 7px;
+      top: 22px;
+    }
+
+    #logo {
+      height: 115px;
+      margin-bottom: 40%;
+
+      img {
+        width: 80px;
+        @include image-responsive();
+        @include position-block-center();
+      }
+
+      &--text {
+        margin-top: 0%;
+        margin-bottom: 50%;
+        text-align: center;
+        transition: 0.5s;
+      }
+
+      &:hover {
+        cursor: pointer;
+        @include effect-light(medium);
+      }
+    }
+
+    .menu-item {
+      margin-top: 1.3rem;
+      font-family: Quicksand;
+      font-weight: bolder;
+      cursor: pointer;
+      animation-delay: 0.3s;
+      @include animation-scale(left);
+      transition: 0.5s;
+
+      &:hover {
+        @include effect-light(large);
+      }
+    }
+
+    .selected-menu-item {
+      color: rgb(83, 169, 255);
+      background-color: rgb(47, 45, 42);
+      border-radius: 10px;
+      padding: 10px;
+      @include effect-shadow-box-inset(small);
+      transition: 0.5s;
+
+      &:hover {
+        @include effect-light(none);
+      }
+    }
+
+    #app-version {
+      margin-top: 50%;
+      font-size: small;
+      text-align: center;
+    }
+  }
+
+  //TODO: sidebar ...
+  .menu {
+    &-active {
+      // @include box-debug(red);
+      @include animation-slide(in, left);
+    }
+
+    &-disable {
+      // @include box-debug(blue);
+      @include animation-slide(out, left);
+    }
+  }
+
+  #main {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  //status bar (caisse, date, admin)
+  mat-toolbar {
+    width: 50%;
+    margin-top: 1%;
+    padding-left: 20%;
+    padding-right: 20%;
+    border-radius: 10px;
+    min-width: 800px;
+    background-color: #333;
+    @include position-block-center;
+    @include animation-slide(in, down);
+    @include effect-shadow-box(solid);
+    transition: 0.3s;
+
+    .toolbar-items {
+      padding: 20px;
+      @include position-flex-center;
+
+      .items {
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+    }
+
+    .caisse {
+      &-btn {
+        background-color: #333;
+        color: goldenrod;
+        font-weight: bolder;
+        border: none;
+        border-radius: 7px;
+        padding: 5px 10px 5px 10px;
+        transition: 0.3s;
+
+        &:hover {
+          cursor: pointer;
+          background-color: goldenrod;
+          color: #eee;
+        }
+      }
+      span {
+        color: goldenrod;
+      }
+    }
+
+    .date {
+      text-transform: capitalize;
+    }
+
+    .user {
+      margin-right: 70px;
+      display: flex;
+      align-items: center;
+      text-transform: capitalize;
+
+      mat-icon {
+        transform: scale(1.5);
+        margin-right: 0.8rem;
+      }
+    }
+
+    .logout-btn {
+      background-color: #333;
+      color: rgb(214, 106, 66);
+      font-weight: bolder;
+      border: none;
+      border-radius: 7px;
+      margin-left: 70px;
+      padding: 5px 10px 5px 10px;
+      transition: 0.3s;
+
+      &:hover {
+        cursor: pointer;
+        background-color: rgb(214, 106, 66);
+        color: #eee;
+      }
+    }
+  }
+
+  //body section
+  section {
+    height: 100%;
+    width: 100%;
+    padding: 5%;
+  }
+
+  //[media-queries(begin)]===========================================
+
+  @mixin mat-toolbar-media(
+    $tbar-width,
+    $mg-right-caisse,
+    $mg-left-lgout: $mg-right-caisse
+  ) {
+    mat-toolbar {
+      width: $tbar-width;
+
+      .caisse {
+        &-btn {
+          margin-right: $mg-right-caisse;
+        }
+      }
+
+      .logout-btn {
+        margin-left: $mg-left-lgout;
+      }
+    }
+  }
+
+  @media (max-width: 1670px) {
+    @include mat-toolbar-media(70%, 2px, 2px);
+  }
+
+  @media (max-width: 1115px) {
+    mat-toolbar {
+      .date {
+        display: none;
+      }
+    }
+  }
+
+  //[media-queries(end)]=============================================
+}

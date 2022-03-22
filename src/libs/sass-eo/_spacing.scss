@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+//NOTE: En utilisant la propriété Sass null, vous pouvez omettre les propriétés de remplissage. Les mêmes règles s'appliquent pour les marges.
+
+//TODO: verified
+/// Modifier rapidement le padding d'un element
+/// @param {pixel | null} $top - espacement en haut du padding
+/// @param {pixel | null} $right - espacement a droite du padding
+/// @param {pixel | null} $bottom - espacement en bas du padding
+/// @param {pixel | null} $left - espacement a gauche du padding
+@mixin spacing-padding($top, $right, $bottom, $left) {
+	padding-top: $top;
+	padding-right: $right;
+	padding-bottom: $bottom;
+	padding-left: $left;
+}
+
+//TODO: verified
+/// Modifier rapidement le margin d'un element
+/// @param {pixel | null} $top - espacement en haut du margin
+/// @param {pixel | null} $right - espacement a droite du margin
+/// @param {pixel | null} $bottom - espacement en bas du margin
+/// @param {pixel | null} $left - espacement a gauche du margin
+@mixin spacing-margin($top, $right, $bottom, $left) {
+	margin-top: $top;
+	margin-right: $right;
+	margin-bottom: $bottom;
+	margin-left: $left;
+}
+
+//TODO: verified
+/// Ajouter rapidement un padding|margin predefini en fonction du gabarit en argument
+/// @param {string} $gabarit [small, medium, large] - gabarit d'espacement (petit, moyen, grand) d'un container
+@mixin spacing-quick($gabarit: medium) {
+	@if ($gabarit == small) {
+		padding: 10px 10px 10px 10px;
+		margin: 10px 10px 10px 10px;
+	}
+	@if ($gabarit == medium) {
+		padding: 30px 30px 30px 30px;
+		margin: 30px 30px 30px 30px;
+	}
+	@if ($gabarit == large) {
+		padding: 50px 50px 50px 50px;
+		margin: 50px 50px 50px 50px;
+	}
+}

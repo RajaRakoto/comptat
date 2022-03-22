@@ -1,0 +1,43 @@
+<div class="container">
+  <section class="depense-field">
+    <div class="depense-item" *ngFor="let depense of monthlyDepense.depenses">
+      <div class="libelle">{{ depense.libelle }} :</div>
+      <div class="montant" *ngIf="!depense.editable">
+        {{ depense.montant | currency: " ":"symbol":"1.0" }} Ar
+      </div>
+
+      <div class="montant editable" *ngIf="depense.editable">
+        <input
+          type="number"
+          min="0"
+          value="{{ depense.montant | currency: ' ':'symbol':'1.0' }}"
+        />
+        Ar
+      </div>
+    </div>
+
+    <button mat-raised-button (click)="(null)">Valider</button>
+  </section>
+
+  <aside class="bilan-field">
+    <div class="date">{{ monthlyDepense.date }}</div>
+    <div class="bilan-item">
+      <div class="bilan-libelle">Revenu :</div>
+      <div class="bilan-montant">
+        {{ monthlyDepense.bilan.revenu | currency: " ":"symbol":"1.0" }} Ar
+      </div>
+    </div>
+    <div class="bilan-item">
+      <div class="bilan-libelle">Dépense :</div>
+      <div class="bilan-montant">
+        {{ monthlyDepense.bilan.depense | currency: " ":"symbol":"1.0" }} Ar
+      </div>
+    </div>
+    <div class="bilan-item">
+      <div class="bilan-libelle">Gain :</div>
+      <div class="bilan-montant">
+        {{ monthlyDepense.bilan.gain | currency: " ":"symbol":"1.0" }} Ar
+      </div>
+    </div>
+  </aside>
+</div>
