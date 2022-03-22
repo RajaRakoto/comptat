@@ -8,13 +8,13 @@
 
 .container {
   display: flex; //don't delete
+
   #menu {
     position: relative;
     flex-direction: column;
     padding: 0 5rem;
-    padding-right: 5%;
     padding-bottom: 3%;
-    padding-top: 7%;
+    padding-top: 2%;
     margin-right: 20px;
     display: flex;
     height: auto;
@@ -29,7 +29,6 @@
       width: 30%;
       right: 7px;
       top: 22px;
-      @include box-debug(red);
     }
 
     #logo {
@@ -60,7 +59,6 @@
       font-family: Quicksand;
       font-weight: bolder;
       cursor: pointer;
-      text-align: center;
       animation-delay: 0.3s;
       @include animation-scale(left);
       transition: 0.5s;
@@ -87,6 +85,19 @@
       margin-top: 50%;
       font-size: small;
       text-align: center;
+    }
+  }
+
+  //TODO: sidebar ...
+  .menu {
+    &-active {
+      // @include box-debug(red);
+      @include animation-slide(in, left);
+    }
+
+    &-disable {
+      // @include box-debug(blue);
+      @include animation-slide(out, left);
     }
   }
 
