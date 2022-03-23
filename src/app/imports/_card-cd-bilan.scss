@@ -25,6 +25,12 @@
       @include effect-box-shadow(small);
       @include animation-zoom(in);
       @include box-generator(rgba(66, 66, 64, 0.89), auto, auto, 10px);
+      transition: 0.5s;
+      
+      &:hover {
+        @include animation-zoom-fixed(1.01);
+        @include effect-box-shadow(large);
+      }
     }
 
     .#{$className}-item {

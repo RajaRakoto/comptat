@@ -25,6 +25,12 @@
     border-radius: 1em;
     overflow: hidden;
     @include effect-box-shadow(small);
+    transition: 0.5s;
+
+    &:hover {
+      @include animation-zoom-fixed(1.01);
+      @include effect-box-shadow(large);
+    }
 
     th {
       color: white;
