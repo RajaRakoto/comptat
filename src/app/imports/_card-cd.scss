@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@import "./button-style";
+
 /// Modele de card pour credit & depenser
 /// @param $className [revenu, depense]
 @mixin card-cd($className) {
@@ -13,11 +15,12 @@
     display: flex;
     flex-direction: column;
     flex: 2;
+    @include button-style();
 
     .#{$className}-box {
       padding: 20px;
       margin: 2rem;
-      margin-top: 15%;
+      margin-top: 7%;
       @include effect-box-shadow(small);
       @include animation-zoom(in);
       @include box-generator(rgba(66, 66, 64, 0.89), auto, auto, 10px);
@@ -41,24 +44,6 @@
       .#{$className}-montant {
         font-weight: bold;
         color: goldenrod;
-      }
-    }
-
-    button {
-      display: flex;
-      align-items: flex-start;
-      margin-top: 1rem;
-      padding: 0.1rem 2.5rem;
-      border-radius: 1.2rem;
-      width: fit-content;
-      margin: 0 auto;
-      background-color: dodgerblue;
-      transition: 0.5s;
-
-      &:hover {
-        background-color: goldenrod;
-        @include animation-zoom-fixed();
-        @include effect-box-shadow(medium);
       }
     }
   }
