@@ -9,6 +9,23 @@
     padding: 1rem;
     @include animation-zoom(in);
 
+    .daily-title {
+      @include spacing-quick();
+    }
+
+    $tmp: "";
+
+    @if ($column-type == column-type-motif) {
+      $tmp: depense;
+    } @else {
+      $tmp: revenu;
+    }
+
+    .daily-#{$tmp} {
+      @include spacing-quick();
+      border: 7px dotted rgba(192, 192, 192, 0.281);
+    }
+
     table {
       text-align: center;
       width: 100%;
