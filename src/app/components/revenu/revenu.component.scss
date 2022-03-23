@@ -1,42 +1,57 @@
 @import "../../../libs/sass-eo/ALL-IMPORT";
 
 .container {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  @include animation-zoom(in);
+
+  table {
+    text-align: center;
     width: 100%;
-    height: 100%;
-    padding: 1rem;
-    @include animation-zoom(in);
+    border: solid 3px #eee;
+    border-collapse: collapse;
+    border-radius: 1em;
+    overflow: hidden;
+    @include effect-shadow-box(small);
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
-
-        th {
-            color: white;
-            background-color: dodgerblue;
-            text-transform: capitalize;
-            font-weight: bold;
-        }
-
-        td,th {
-            padding: 1rem 2rem;
-            border: 1px solid grey;
-        }
-
-        .column-heure {
-            width: 100px;
-        }
-
-        tfoot {
-
-            .column-type-source {
-                text-align: center;
-                background-color: dodgerblue;
-            }
-
-            td {
-                font-weight: bold;
-            }
-        }
+    th {
+      color: white;
+      background-color: rgb(84, 165, 246);
+      text-transform: capitalize;
+      font-size: larger;
     }
 
+    td,
+    th {
+      font-weight: bolder;
+      padding: 1rem 0.3rem;
+      border: 1px solid grey;
+    }
+
+    td {
+      background-color: rgba(66, 66, 64, 0.89);
+    }
+
+    .column-heure {
+      width: 100px;
+    }
+
+    tfoot {
+      .column-type-source {
+        text-align: center;
+        background-color: rgb(228, 184, 72);
+        font-size: 20px;
+      }
+
+      td {
+        font-weight: bold;
+      }
+
+      .column-montant {
+        color: goldenrod;
+        font-size: larger;
+      }
+    }
+  }
 }
