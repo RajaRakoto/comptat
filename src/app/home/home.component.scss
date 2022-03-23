@@ -36,6 +36,7 @@
     #logo {
       height: 115px;
       margin-bottom: 40%;
+      transition: 1s;
 
       img {
         width: 80px;
@@ -53,6 +54,7 @@
       &:hover {
         cursor: pointer;
         @include effect-light(medium);
+        @include animation-zoom-fixed();
       }
     }
 
