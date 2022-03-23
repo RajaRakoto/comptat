@@ -1,19 +1,20 @@
 <div class="container">
   <section class="depense-field">
-    <div class="depense-item" *ngFor="let depense of depenses; let i = index">
-      <mat-icon class="mat-18" color="warn" (click)="onDropDepense(i)"
-        >cancel</mat-icon
-      >
-      <div class="depense-type">{{ depense.type }} :</div>
-      <div class="depense-motif">
-        {{ depense.motif }}
+    <div class="depense-box">
+      <div class="depense-item" *ngFor="let depense of depenses; let i = index">
+        <mat-icon class="mat-18" color="warn" (click)="onDropDepense(i)"
+          >cancel</mat-icon
+        >
+        <div class="depense-type">{{ depense.type }} :</div>
+        <div class="depense-motif">
+          {{ depense.motif }}
+        </div>
+        <div class="depense-montant">
+          {{ depense.montant | currency: " ":"symbol":"1.0" }} Ar
+        </div>
       </div>
-      <div class="depense-montant">
-        {{ depense.montant | currency: " ":"symbol":"1.0" }} Ar
-      </div>
+      <button mat-raised-button (click)="onConfirm()">Valider</button>
     </div>
-
-    <button mat-raised-button (click)="onConfirm()">Valider</button>
   </section>
 
   <aside class="type-field">

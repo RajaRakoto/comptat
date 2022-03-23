@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+@import "./button-style";
+
+/// Modele de card pour credit & depenser
+/// @param $className [revenu, depense]
+@mixin card-cd($className) {
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+
+  section.#{$className}-field {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    @include button-style();
+
+    .#{$className}-box {
+      padding: 20px;
+      margin: 2rem;
+      margin-top: 7%;
+      @include effect-box-shadow(small);
+      @include animation-zoom(in);
+      @include box-generator(rgba(66, 66, 64, 0.89), auto, auto, 10px);
+    }
+
+    .#{$className}-item {
+      display: flex;
+      margin-left: 2rem;
+      margin-bottom: 2rem;
+
+      div {
+        margin-left: 1rem;
+      }
+
+      .#{$className}-type {
+        text-decoration: underline;
+        font-style: italic;
+        text-transform: capitalize;
+      }
+
+      .#{$className}-montant {
+        font-weight: bold;
+        color: goldenrod;
+      }
+    }
+  }
+
+  aside.type-field {
+    border-left: 5px solid silver;
+    flex: 1;
+    padding: 0 2rem;
+    @include animation-scale(right);
+
+    .#{$className}-type {
+      margin-bottom: 2rem;
+      display: flex;
+      cursor: pointer;
+      transition: 0.3s;
+
+      .#{$className}-type-libelle {
+        margin-left: 1rem;
+      }
+
+      &:hover {
+        * {
+          color: dodgerblue;
+          @include animation-zoom-fixed();
+          @include effect-text-shadow(small);
+        }
+      }
+    }
+  }
+}

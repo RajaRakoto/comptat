@@ -1,4 +1,6 @@
-@import "../../../libs/sass-eo/ALL-IMPORT";
+@charset "UTF-8";
+
+@import "../../libs/sass-eo/ALL-IMPORT";
 
 .container {
   width: 100%;
@@ -7,46 +9,55 @@
   @include animation-zoom(in);
 
   .anual-bilan {
-    _border: 2px dashed darkgreen;
-    padding-bottom: 2rem;
+    border: 7px dotted rgba(192, 192, 192, 0.281);
+    @include spacing-quick();
 
     .year-title {
-      color: dodgerblue;
-      font-style: italic;
-      text-align: center;
+      @include spacing-quick();
     }
   }
 
   table {
+    text-align: center;
     width: 100%;
+    border: solid 3px #eee;
     border-collapse: collapse;
+    border-radius: 1em;
+    overflow: hidden;
+    @include effect-box-shadow(small);
 
     th {
       color: white;
-      background-color: dodgerblue;
+      background-color: rgb(84, 165, 246);
       text-transform: capitalize;
-      font-weight: bold;
+      font-size: larger;
     }
 
     td,
     th {
-      padding: 1rem 2rem;
+      font-weight: bolder;
+      padding: 1rem 0.3rem;
       border: 1px solid grey;
     }
 
-    .column-mois {
-      width: 150px;
-      text-transform: capitalize;
+    td {
+      background-color: rgba(66, 66, 64, 0.89);
     }
 
     tfoot {
-      .column-mois {
-        text-align: center;
-        background-color: dodgerblue;
-      }
+      .column {
+        &-mois {
+          text-align: center;
+          background-color: rgb(228, 184, 72);
+          font-size: 20px;
+        }
 
-      td {
-        font-weight: bold;
+        &-revenu,
+        &-depense,
+        &-montant {
+          color: goldenrod;
+          font-size: larger;
+        }
       }
     }
   }

@@ -1,19 +1,20 @@
 <div class="container">
   <section class="revenu-field">
-    <div class="revenu-item" *ngFor="let revenu of revenus; let i = index">
-      <mat-icon class="mat-18" color="warn" (click)="onDropRevenu(i)"
-        >cancel</mat-icon
-      >
-      <div class="revenu-type">{{ revenu.type }} :</div>
-      <div class="revenu-source">
-        {{ revenu.source }}
+    <div class="revenu-box">
+      <div class="revenu-item" *ngFor="let revenu of revenus; let i = index">
+        <mat-icon class="mat-18" color="warn" (click)="onDropRevenu(i)"
+          >cancel</mat-icon
+        >
+        <div class="revenu-type">{{ revenu.type }} :</div>
+        <div class="revenu-source">
+          {{ revenu.source }}
+        </div>
+        <div class="revenu-montant">
+          {{ revenu.montant | currency: " ":"symbol":"1.0" }} Ar
+        </div>
       </div>
-      <div class="revenu-montant">
-        {{ revenu.montant | currency: " ":"symbol":"1.0" }} Ar
-      </div>
+      <button mat-raised-button (click)="onConfirm()">Valider</button>
     </div>
-
-    <button mat-raised-button (click)="onConfirm()">Valider</button>
   </section>
 
   <aside class="type-field">

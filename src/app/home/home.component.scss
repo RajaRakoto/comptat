@@ -1,5 +1,7 @@
-@import "../../imports/typography";
-@import "../../libs/sass-eo/ALL-IMPORT";
+@charset "UTF-8";
+
+@import "../imports/typography";
+@import "../libs/sass-eo/ALL-IMPORT";
 
 @mixin border-style() {
   border: 2px solid gray;
@@ -21,7 +23,7 @@
     min-width: 270px;
     background-color: #333;
     z-index: 1;
-    @include effect-shadow-box(medium);
+    @include effect-box-shadow(medium);
     @include animation-slide(in, left);
 
     .hamburger {
@@ -34,6 +36,7 @@
     #logo {
       height: 115px;
       margin-bottom: 40%;
+      transition: 1s;
 
       img {
         width: 80px;
@@ -51,6 +54,7 @@
       &:hover {
         cursor: pointer;
         @include effect-light(medium);
+        @include animation-zoom-fixed();
       }
     }
 
@@ -73,7 +77,7 @@
       background-color: rgb(47, 45, 42);
       border-radius: 10px;
       padding: 10px;
-      @include effect-shadow-box-inset(small);
+      @include effect-box-shadow-inset(small);
       transition: 0.5s;
 
       &:hover {
@@ -119,7 +123,7 @@
     background-color: #333;
     @include position-block-center;
     @include animation-slide(in, down);
-    @include effect-shadow-box(solid);
+    @include effect-box-shadow(solid);
     transition: 0.3s;
 
     .toolbar-items {

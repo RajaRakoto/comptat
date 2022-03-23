@@ -1,5 +1,7 @@
-@import "./libs/sass-eo/ALL-IMPORT";
-@import "./imports/typography";
+@charset "UTF-8";
+
+@import "./app/libs/sass-eo/ALL-IMPORT";
+@import "./app/imports/typography";
 
 //global
 html, .container {
