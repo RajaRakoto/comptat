@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
+declare var VANTA: any;
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,7 +17,18 @@ export class LoginComponent implements OnInit {
     private toast: MatSnackBar
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    VANTA.WAVES({
+      el: '#vanta-waves',
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 600.0,
+      minWidth: 100.0,
+      scale: 1.0,
+      scaleMobile: 1.0,
+    });
+  }
 
   onLogin(ID: string, password: string) {
     const connected = this.userService.login(ID, password);
