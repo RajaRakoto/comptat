@@ -409,9 +409,18 @@
 }
 //fade(end)--------------------------------------
 
+//TODO: update
+//zoom-fixed(begin)----------------------------------
+/// Ajouter un effet d'animation zoom fixe - souvent utilisE pour un boutton ou cardlist
+/// @param {float} $scaleValue [0.5 ~ 1.5] - valeur du scale (zoom)
+@mixin animation-zoom-fixed($scaleValue: 1.1) {
+  transform: scale($scaleValue);
+}
+//zoom-fixed(end)------------------------------------
+
 //TODO: verified
 //zoom(begin)------------------------------------
-/// Ajouter un effet d'animation zoom
+/// Ajouter un effet d'animation zoom temporaire - souvent utilisE pour un effet d'animation en entree
 /// @param {string} $in-out [in, out] - entree|sortie de l'animation
 @mixin animation-zoom($in-out) {
   @if ($in-out == in) {
