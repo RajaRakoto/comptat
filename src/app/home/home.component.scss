@@ -1,5 +1,7 @@
-@import "../../imports/typography";
-@import "../../libs/sass-eo/ALL-IMPORT";
+@charset "UTF-8";
+
+@import "../imports/typography";
+@import "../libs/sass-eo/ALL-IMPORT";
 
 @mixin border-style() {
   border: 2px solid gray;
