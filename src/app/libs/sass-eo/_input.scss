@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+//DESCRIPTION: ensemble des styles input pre a employer
+
+//TODO: update
+/// Scale zoom effect input
+/// @param {color} $bg-color [silver] - couleur de l'arriere plan
+/// @param {color} $border-color [silver] - couleur de bordure
+/// @param {color} $text-color [#444] - couleur du texte
+@mixin input-scale(
+  $bg-color: silver,
+  $border-color: silver,
+  $text-color: #444
+) {
+  padding: 3px 5px 3px 5px;
+  color: $text-color;
+  background-color: $bg-color;
+  border: 2px solid $border-color;
+  border-radius: 10px;
+  transition: 0.2s;
+
+  &:focus {
+    border-radius: 5px;
+    border: 2px solid $border-color;
+    transform: scale(1.05);
+  }
+}
