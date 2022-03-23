@@ -1,9 +1,11 @@
 <div class="container">
   <section class="revenu-field">
-    <div class="revenu-item" *ngFor="let revenu of monthlyRevenu.revenus">
-      <div class="libelle">{{ revenu.libelle }} :</div>
-      <div class="montant">
-        {{ revenu.montant | currency: " ":"symbol":"1.0" }} Ar
+    <div class="revenu-box">
+      <div class="revenu-item" *ngFor="let revenu of monthlyRevenu.revenus">
+        <div class="libelle">{{ revenu.libelle }} :</div>
+        <div class="montant">
+          {{ revenu.montant | currency: " ":"symbol":"1.0" }} Ar
+        </div>
       </div>
     </div>
   </section>
