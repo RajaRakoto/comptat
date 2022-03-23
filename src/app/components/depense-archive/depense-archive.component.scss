@@ -3,13 +3,4 @@
 @import "../../libs/sass-eo/ALL-IMPORT";
 @import "../../imports/table-modele";
 
-.daily-title {
-  @include spacing-quick();
-}
-
-.daily-depense {
-  @include spacing-quick();
-  border: 7px dotted rgba(192, 192, 192, 0.281);
-}
-
 @include table-modele(column-type-motif);

@@ -33,7 +33,6 @@
       margin-bottom: 2rem;
 
       .libelle {
-        _border: 1px dashed magenta;
         text-transform: capitalize;
         width: 160px;
         text-align: end;
@@ -42,7 +41,6 @@
       .montant {
         font-weight: bold;
         margin-left: 1rem;
-        _border: 1px dashed yellowgreen;
         width: 160px;
 
         input {
@@ -77,13 +75,11 @@
       }
 
       &-libelle {
-        _border: 2px dashed magenta;
         text-align: end;
         width: 90px;
       }
 
       &-montant {
-        _border: 2px dashed yellowgreen;
         width: 150px;
         padding-left: 1rem;
         font-weight: bold;
