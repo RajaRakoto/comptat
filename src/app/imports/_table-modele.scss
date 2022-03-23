@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /// Modele de table pour revenu et depense (archivE ou non archivE)
-/// @param {class} $column-type [source, motif] - class pour column-type
+/// @param {class} $column-type [column-type-source, column-type-motif] - class pour column-type
 @mixin table-modele($column-type) {
   .container {
     width: 100%;
