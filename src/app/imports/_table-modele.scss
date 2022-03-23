@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+/// Modele de table pour revenu et depense (archivE ou non archivE)
+/// @param {class} $column-type [source, motif] - class pour column-type
+@mixin table-modele($column-type) {
+  .container {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    @include animation-zoom(in);
+
+    table {
+      text-align: center;
+      width: 100%;
+      border: solid 3px #eee;
+      border-collapse: collapse;
+      border-radius: 1em;
+      overflow: hidden;
+      @include effect-shadow-box(small);
+
+      th {
+        color: white;
+        background-color: rgb(84, 165, 246);
+        text-transform: capitalize;
+        font-size: larger;
+      }
+
+      td,
+      th {
+        font-weight: bolder;
+        padding: 1rem 0.3rem;
+        border: 1px solid grey;
+      }
+
+      td {
+        background-color: rgba(66, 66, 64, 0.89);
+      }
+
+      .column-heure {
+        width: 100px;
+      }
+
+      tfoot {
+        .#{$column-type} {
+          text-align: center;
+          background-color: rgb(228, 184, 72);
+          font-size: 20px;
+        }
+
+        td {
+          font-weight: bold;
+        }
+
+        .column-montant {
+          color: goldenrod;
+          font-size: larger;
+        }
+      }
+    }
+  }
+}
