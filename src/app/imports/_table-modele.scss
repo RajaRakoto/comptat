@@ -16,7 +16,7 @@
       border-collapse: collapse;
       border-radius: 1em;
       overflow: hidden;
-      @include effect-shadow-box(small);
+      @include effect-box-shadow(small);
 
       th {
         color: white;
