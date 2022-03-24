@@ -30,10 +30,10 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      @include button-style();
 
       button {
         margin: 1rem;
+        @include button-style();
       }
 
       .form-item {

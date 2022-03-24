@@ -21,7 +21,7 @@
   </section>
 
   <nav>
-    <input type="number" #versement />
+    <input type="number" #versement min="0" />
     <button mat-raised-button (click)="onSubmit(+versement.value)">
       Verser
     </button>
