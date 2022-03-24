@@ -1,3 +1,8 @@
+@charset "UTF-8";
+
+@import "../../imports/button-style";
+@import "../../libs/sass-eo/ALL-IMPORT";
+
 .container {
   width: 100%;
   height: 100%;
@@ -20,26 +25,22 @@
       }
 
       h3 {
-        color: dodgerblue;
-        font-style: italic;
+        color: goldenrod;
       }
     }
   }
 
   nav {
     margin-top: 1rem;
-      display: flex;
-      justify-content: space-around;
+    display: flex;
+    justify-content: space-around;
 
-        input {
-          width: 180px;
-        }
-
-  button {
-    padding: 0 2rem;
-    border-radius: 2rem;
-    background-color: dodgerblue;
-  }
+    input {
+      @include input-scale();
     }
-
+    
+    button {
+      @include button-style();
+    }
+  }
 }

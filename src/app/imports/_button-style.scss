@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+@mixin button-style() {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 1rem;
+    padding: 0.1rem 2.5rem;
+    border-radius: 1.2rem;
+    width: fit-content;
+    margin: 0 auto;
+    background-color: dodgerblue;
+    transition: 0.5s;
+
+    &:hover {
+      background-color: goldenrod;
+      @include animation-zoom-fixed();
+      @include effect-box-shadow(medium);
+    }
+}
