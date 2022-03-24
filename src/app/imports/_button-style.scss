@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 @mixin button-style() {
-  button {
     display: flex;
     align-items: flex-start;
     margin-top: 1rem;
@@ -17,5 +16,4 @@
       @include animation-zoom-fixed();
       @include effect-box-shadow(medium);
     }
-  }
 }
