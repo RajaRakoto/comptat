@@ -1,66 +1,66 @@
+@charset 'UTF-8';
+
+@import "../../imports/button-style";
+@import "../../libs/sass-eo/ALL-IMPORT";
 
 .container {
-    width: 100vw;
-    height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  #login-box {
+    width: 400px;
+    padding: 2rem;
     display: flex;
-    justify-content: center;
     align-items: center;
+    flex-direction: column;
+    background-color: #2d2d2d;
+    border-radius: 1rem;
+    @include effect-box-shadow(medium);
 
-    section.login-box {
-        width: 400px;
-        padding: 2rem;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        background-color: #2d2d2d;
-        border-radius: 1rem;
-        box-shadow: 20px 20px 35px -8px #2d2d2d;
-
-        h1 {
-            margin-bottom: 2rem;
-            font-weight: bold;
-            color: dodgerblue;
-
-            span {
-                font-weight: 500;
-                opacity: 0.6;
-                margin-left: 0.3rem;
-            }
-        }
-
-        form {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            
-            .form-item {
-                display: flex;
-                width: 100%;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 1rem;
-
-                .label {
-                    transform: translateY(5px);
-                    font-weight: bold;
-                    flex: 1;
-                    text-align: end;
-                    padding-right: 2rem;
-                }
-
-                input {
-                    color: #444;
-                }
-            }
-
-            button {
-                margin-top: 1.5rem;
-                padding: 0 2rem;
-                border-radius: 1.8rem;
-                background-color: dodgerblue;
-            }
-        }
+    #logo--text {
+      text-align: center;
     }
+
+    form {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @include button-style();
+
+      button {
+        margin: 1rem;
+      }
+
+      .form-item {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        .label {
+          transform: translateY(5px);
+          font-weight: bold;
+          flex: 1;
+          text-align: end;
+          padding-right: 2rem;
+        }
+
+        input {
+          @include input-scale();
+        }
+      }
+    }
+
+    #app-version {
+      margin-top: 5%;
+      font-size: small;
+      text-align: center;
+    }
+  }
 }
