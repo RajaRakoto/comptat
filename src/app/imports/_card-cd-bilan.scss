@@ -16,7 +16,10 @@
     flex-direction: column;
     align-items: center;
     flex: 2;
-    @include button-style();
+
+    button {
+      @include button-style();
+    }
 
     .#{$className}-box {
       padding: 20px;
@@ -26,7 +29,7 @@
       @include animation-zoom(in);
       @include box-generator(rgba(66, 66, 64, 0.89), auto, auto, 10px);
       transition: 0.5s;
-      
+
       &:hover {
         @include animation-zoom-fixed(1.01);
         @include effect-box-shadow(large);
@@ -52,6 +55,13 @@
         input {
           color: #2d2d2d;
           width: 130px;
+          border-radius: 10px;
+          padding: 2px 5px 2px 5px;
+          transition: 0.3s;
+
+          &:focus {
+            border-radius: 5px;
+          }
         }
       }
     }

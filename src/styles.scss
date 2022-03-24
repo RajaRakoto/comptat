@@ -4,12 +4,13 @@
 @import "./app/imports/typography";
 
 //global
-html, .container {
+html,
+.container {
   background-color: #444;
 }
 
 mat-icon {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 * {
@@ -35,7 +36,7 @@ input {
 .dialog-box {
   mat-dialog-container {
     border-radius: 10px;
-    background-color: #444
+    background-color: #444;
   }
 }
 
@@ -64,8 +65,6 @@ input {
     }
   }
 }
-
-
 
 // Normalize permet aux navigateurs de rendre tous les éléments de manière plus cohérente et conforme aux normes modernes
 @include normalize();
